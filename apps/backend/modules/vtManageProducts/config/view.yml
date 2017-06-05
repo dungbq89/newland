@@ -1,0 +1,11 @@
+## YAML Template.
+---
+indexSuccess:
+  metas:
+    title: Danh sách Sản phẩm
+newSuccess:
+  metas:
+    title: Thêm mới Sản phẩm
+editSuccess:
+  metas:
+    title: Chỉnh sửa Sản phẩm

@@ -1,0 +1,49 @@
+all:
+  sf_captchagd:
+     image_width:                180 # image width in pixels
+     image_height:               27 # image height in pixels
+     chars:                      "2345678abcdefhjkmnprsuxyz" # possible chars in captcha
+     length:                     2 # length of captcha
+     font_size:                  14 # font size
+     force_new_captcha:          true # if true - captcha regenerated EVERY request, even if user input true value before
+     fonts: ["akbar/vavobi.ttf"]
+
+  image_maxsize: 52428800
+  upload_max_size:   104857600
+  image_upload_max_size: 52428800
+  upload_video_max_size: 50485760
+  upload_max_size:   104857600
+  excel_max_row: 1000
+  category_images: category_images
+  article_images: article
+  service_images: service
+  advertise_images: advertise
+  product_images: products
+  import_max_size: 1048576
+  album_images: album
+  video_images: video
+  document: document
+  member_images: member
+  upload_member: F:\code\tubephoanmy/web/uploads
+
+  upload_media_file: F:\code\tubephoanmy/web/uploads
+  url_media_file: http://localhost:9327/uploads
+  url_media_default_file: http://localhost:9327/images/default-image.jpg
+  #upload_media_file: /uploads
+
+  url_media_file: /uploads
+  
+  ckeditor:
+    basePath: /js/ckeditor
+  ckfinder:
+    active: true
+    basePath: /js/ckfinder
+  addcslashes_charlist: "%_-\'"  # Danh sach cac ky tu dac biet can xu ly truoc khi su dung search query
+  seo:
+    title: 'TỦ BẾP HOÀN MỸ'
+    description: 'Tủ bếp Hoàn Mỹ chuyên cung cấp Bếp điện từ, bếp gas âm, máy hút mùi, máy rửa bát, máy sấy, máy lọc nước, lò nướng, lò vi sóng, chậu rửa bát, đồ gia dụng, thiết bị vệ sinh'
+    keywords: 'Bếp điện từ, bếp gas âm, máy hút mùi, máy rửa bát, máy sấy, máy lọc nước, lò nướng, lò vi sóng, chậu rửa bát, đồ gia dụng, thiết bị vệ sinh'
+    ogImage: ''
+    url: 'http://tubephoanmy.com'
+ 
+  

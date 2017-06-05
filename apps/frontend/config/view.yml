@@ -1,0 +1,34 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:
+    - style.css
+    - jquery.jqzoom.css
+    - /utils/highslide/highslide.css
+    - /utils/fancybox/jquery.fancybox.css
+    - /utils/zebradialog/default/zebradialog.css
+    - jquery.bxslider.css
+    - coder_update.css
+
+  javascripts:
+    - jquery.js
+    - jquery.carou-fredsel-6.1.0-packed.js
+#    - library.js
+#    - /utils/fancybox/jquery.fancybox.js
+    - ajax-request.js
+    - jquery.bxslider.js
+    - daithanh.js
+
+  has_layout:     true
+  layout:         layout

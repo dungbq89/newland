@@ -1,0 +1,81 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+#trang hiển thị chi tiết tin tức
+article_detail:
+  url: /bai-viet/:slug
+  param: {module: pageNewsDetails, action: index}
+
+products:
+  url: /chuyen-muc/:slug/:page
+  param: {module: pageProduct, action: index, page:''}
+  
+product_all:
+  url: /all/:page
+  param: {module: pageProduct, action: list, page:''}
+#trang hiển thị chi tiết tin tức
+category_news:
+  url: /tin-tuc/:slug
+  param: {module: pageNews, action: index, slug: ''}
+
+products:
+  url: /chuyen-muc/:slug/:page
+  param: {module: pageProduct, action: index, page:''}
+
+product_detail:
+  url: /sam-pham/:slug
+  param: {module: pageProduct, action: detail}
+
+pageError:
+  url:  /error.:sf_format
+  param: { module:  default, action: error404, sf_format: html}
+  requirements: {sf_method: get }
+#trang album
+page_register:
+  url: /dang-ky
+  param: {module: pageRegister, action: index}
+#trang album
+page_album:
+  url: /album/:slug
+  param: {module: pageAlbum, action: index, slug: ''}
+#trang gioi thieu
+videopage:
+  url: /video/:slug
+  param: {module: pageVideo, action: index, slug: ''}
+#trang gioi thieu
+introduction:
+  url: /gioi-thieu/:slug
+  param: {module: pageIntroduction, action: index}
+#trang tim kiem tin tuc
+page_search:
+  url:  /tim-kiem
+  param: { module: pageSearch, action: index}
+
+  
+#trang danh ba hoi vien
+contact:
+  url: /lien-he
+  param: {module: pageContact, action: index}
+personnal:
+  url: /danh-ba-hoi-vien
+  param: {module: pagePersonal, action: index}
+
+#ajax load video
+ajax_load_video:
+  url: /load-video
+  param: {module: ajax, action: ajaxLoadVideo}
+
+# default rules
+homepage:
+  url:   /:slug
+#  param: { module: pageHome, action: index }
+  param: { module: pageHome, action: index, slug: '' }
+  requirements: { sf_method: get }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
