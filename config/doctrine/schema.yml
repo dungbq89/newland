@@ -371,6 +371,9 @@ VtpProducts:
     lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
     meta: { type: string(255), comment: "Nội dung meta" }
     keywords: { type: string(255), comment: "Nội dung keywords"}
+    lat: { type: string(255), comment: "tọa độ latitude"}
+    long: { type: string(255), comment: "tọa dộ longtidude"}
+    parameter_ids: { type: string(255), comment: "Danh sách parameter"}
   relations:
     VtpProducts: { class: VtpProductsCategory, local: category_id, type: one, foreignAlias: ProductCategory }
 VtpProductImage:
@@ -453,3 +456,26 @@ Booking:
     to_time: { type: timestamp(25), comment: "Thời gian kết thúc đặt phòng"}
     number_person: {type: integer(8), notnull: false, default: null}
     number_room: {type: integer(8), notnull: false, default: null}
+ParameterCategory:
+  #connection: doctrine
+  tableName: parameter_category
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    name: { type: string(255), notnull: true,  comment: "Tên"}
+    priority: {type: integer(5), default: null}
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái"}
+    lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
+Parameter:
+  #connection: doctrine
+  tableName: parameter
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    name: { type: string(255), notnull: true,  comment: "Tên"}
+    priority: {type: integer(5), default: null}
+    cat_id: {type: integer(8), default: 0}
+    is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
+    lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
