@@ -433,3 +433,23 @@ AdNews:
     lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
     slug: { type: string(255), unique: true, notnull: true, comment: "chuyển đổi url"}
     category_id: { type: integer(8), comment: "Id của danh mục tin tức" }
+#bang book phong
+Booking:
+#connection: doctrine
+  tableName: booking
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    full_name: { type: string(255), notnull: true, comment: "Tên KH" }
+    phone: { type: string(255), comment: "SĐT" }
+    email: { type: string(255), comment: "email" }
+    body: { type: clob, comment: "Nội dung bài viết trên web" }
+    category_id: {type: integer(8), notnull: false, default: null}
+    product_id: {type: integer(8), notnull: false, default: null}
+    lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
+    is_check: { type: integer(5), notnull: true, default: 0, comment: "0 chưa xử lý, 1 đang xử lý, 2 đã xử lý" }
+    from_time: { type: timestamp(25), comment: "Thời gian đặt phòng" }
+    to_time: { type: timestamp(25), comment: "Thời gian kết thúc đặt phòng"}
+    number_person: {type: integer(8), notnull: false, default: null}
+    number_room: {type: integer(8), notnull: false, default: null}

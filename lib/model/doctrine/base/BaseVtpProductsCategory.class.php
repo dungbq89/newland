@@ -21,7 +21,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @property string $keywords
  * @property integer $parent_id
  * @property integer $level
- * @property boolean $show_banner
  * @property Doctrine_Collection $ProductCategory
  * 
  * @method string              getName()            Returns the current record's "name" value
@@ -38,7 +37,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @method string              getKeywords()        Returns the current record's "keywords" value
  * @method integer             getParentId()        Returns the current record's "parent_id" value
  * @method integer             getLevel()           Returns the current record's "level" value
- * @method boolean             getShowBanner()      Returns the current record's "show_banner" value
  * @method Doctrine_Collection getProductCategory() Returns the current record's "ProductCategory" collection
  * @method VtpProductsCategory setName()            Sets the current record's "name" value
  * @method VtpProductsCategory setImagePath()       Sets the current record's "image_path" value
@@ -54,7 +52,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @method VtpProductsCategory setKeywords()        Sets the current record's "keywords" value
  * @method VtpProductsCategory setParentId()        Sets the current record's "parent_id" value
  * @method VtpProductsCategory setLevel()           Sets the current record's "level" value
- * @method VtpProductsCategory setShowBanner()      Sets the current record's "show_banner" value
  * @method VtpProductsCategory setProductCategory() Sets the current record's "ProductCategory" collection
  * 
  * @package    Web_Portals
@@ -140,12 +137,6 @@ abstract class BaseVtpProductsCategory extends sfDoctrineRecord
              'type' => 'integer',
              'default' => 0,
              'comment' => 'phân cấp chuyên mục',
-             ));
-        $this->hasColumn('show_banner', 'boolean', null, array(
-             'type' => 'boolean',
-             'notnull' => true,
-             'default' => false,
-             'comment' => 'hiển thị banner',
              ));
     }
 

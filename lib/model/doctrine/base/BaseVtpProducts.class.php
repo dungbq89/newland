@@ -23,7 +23,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @property string $accessories
  * @property boolean $is_active
  * @property boolean $is_home
- * @property boolean $is_hot
  * @property string $slug
  * @property integer $portal_id
  * @property string $lang
@@ -48,7 +47,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @method string              getAccessories()          Returns the current record's "accessories" value
  * @method boolean             getIsActive()             Returns the current record's "is_active" value
  * @method boolean             getIsHome()               Returns the current record's "is_home" value
- * @method boolean             getIsHot()                Returns the current record's "is_hot" value
  * @method string              getSlug()                 Returns the current record's "slug" value
  * @method integer             getPortalId()             Returns the current record's "portal_id" value
  * @method string              getLang()                 Returns the current record's "lang" value
@@ -72,7 +70,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @method VtpProducts         setAccessories()          Sets the current record's "accessories" value
  * @method VtpProducts         setIsActive()             Sets the current record's "is_active" value
  * @method VtpProducts         setIsHome()               Sets the current record's "is_home" value
- * @method VtpProducts         setIsHot()                Sets the current record's "is_hot" value
  * @method VtpProducts         setSlug()                 Sets the current record's "slug" value
  * @method VtpProducts         setPortalId()             Sets the current record's "portal_id" value
  * @method VtpProducts         setLang()                 Sets the current record's "lang" value
@@ -109,15 +106,15 @@ abstract class BaseVtpProducts extends sfDoctrineRecord
              'type' => 'integer',
              'comment' => 'Chuyên mục sản phẩm',
              ));
-        $this->hasColumn('price', 'integer', 10, array(
+        $this->hasColumn('price', 'integer', 8, array(
              'type' => 'integer',
              'comment' => 'Giá sản phẩm',
-             'length' => 10,
+             'length' => 8,
              ));
-        $this->hasColumn('price_promotion', 'integer', 10, array(
+        $this->hasColumn('price_promotion', 'integer', 8, array(
              'type' => 'integer',
-             'comment' => 'Giá khuyến mại',
-             'length' => 10,
+             'comment' => 'Giá sản phẩm',
+             'length' => 8,
              ));
         $this->hasColumn('image_path', 'string', 255, array(
              'type' => 'string',
@@ -169,12 +166,6 @@ abstract class BaseVtpProducts extends sfDoctrineRecord
              'comment' => 'Trạng thái 0=chưa sử dụng, 1= sử dụng',
              ));
         $this->hasColumn('is_home', 'boolean', null, array(
-             'type' => 'boolean',
-             'notnull' => true,
-             'default' => false,
-             'comment' => 'Trạng thái 0=không hiển thị trang chủ, 1= Hiển thị trang chủ',
-             ));
-        $this->hasColumn('is_hot', 'boolean', null, array(
              'type' => 'boolean',
              'notnull' => true,
              'default' => false,
