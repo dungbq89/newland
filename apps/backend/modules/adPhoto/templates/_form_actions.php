@@ -20,7 +20,6 @@
                         }
                         else echo $helper->linkToSave($form->getObject(), array(  'params' =>   array(  ),  'class_suffix' => 'save',  'label' => 'Save',));
                                 ?>                                                                                        
-                            <?php echo $helper->linkToSaveAndAdd($form->getObject(), array(  'params' =>   array(  ),  'class_suffix' => 'save_and_add',  'label' => 'Save and add','default_album_id'=>$sf_request->getParameter('default_album_id'))) ?>                                                
                     </div>
         
                     <div class="btn-group">

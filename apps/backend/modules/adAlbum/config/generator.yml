@@ -23,13 +23,13 @@ generator:
         is_default: {label: Mặc định}
       list:
         title: Danh sách Album
-        display: [name, event_date, priority, is_active]
+        display: [name, priority, is_active]
       filter:  
         display: [name]
 #        class: vtpAlbumFilterAdmin
       form:    
         class: AdAlbumFormAdmin
-        display: [name, image_path, description, priority, event_date, is_active, is_default]
+        display: [name, image_path, description, priority, is_active]
         fields:
           name: {label: Tên Album *}
       edit:    
