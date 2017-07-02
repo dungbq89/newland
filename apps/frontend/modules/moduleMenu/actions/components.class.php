@@ -18,6 +18,15 @@ class moduleMenuComponents extends sfComponents
         $this->mainMenu=$mainMenu;
     }
 
+    public function executeMainMenuHome()
+    {
+        $request=sfContext::getInstance()->getRequest();
+        $this->slug_menu=$request->getParameter('slug_menu');
+        $mainMenu=VtpMenuTable::getMenu(0);
+        if (!count($mainMenu))
+            return sfView::NONE;
+        $this->mainMenu=$mainMenu;
+    }
     public function executeFooterMenu()
     {
         $footerMenu=AdMenuTable::getMenu();
@@ -51,7 +60,12 @@ class moduleMenuComponents extends sfComponents
     }
 
     public function executeHeader(){
-
+        //lay ra danh sach album
+        $this->listAlbum = AdAlbumTable::getAllAlbum()->fetchArray();
+    }
+    public function executeHeaderMobile(){
+        //lay ra danh sach album
+        $this->listAlbum = AdAlbumTable::getAllAlbum()->fetchArray();
     }
 
 }

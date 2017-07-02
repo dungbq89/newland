@@ -1,78 +1,43 @@
-<div class="footer all">
-    <div class="f-top">
+<div class="footer-page">
+    <div class="grid grid-pad">
+        <div class="c20"></div>
 
 
-        <div class="f-top-1"><h4>Cam kết</h4>
-
-            <ul class="ls">
-
-                <li>Sản phẩm, hàng hóa chính hãng đa dạng phong phú.</li>
-
-                <li>Luôn luôn giá rẻ &amp; khuyến mại không ngừng.</li>
-
-                <li>Dịch vụ chăm sóc khách hàng tốt nhất.</li>
-
-            </ul>
+        <div class="col-3-5  tab-col-1-1 mobile-col-1-1 fot-content ">
+            <div><b>Office : <em>Newland Trade &amp; Investment JSC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</em><br/>
+                    Address: <em>No.47 Lane 148 Tran Duy Hung street,<br/>
+                        Cau Giay Disctrict, Hanoi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</em><br/>
+                    Email: <em>info@newlandhouse.vn</em></b><br/>
+                <br/>
+                <br/>
+                <br/>
+                &nbsp;</div>
         </div>
 
-
-        <div class="f-top-2">
-            <h4>Hỗ trợ khách hàng</h4>
-            <ul class="ls">
-
-                <li><a href="/hinh-thuc-thanh-toan.html" title="Hình Thức Thanh Toán" rel="nofollow">Hình Thức Thanh
-                        Toán</a></li>
-
-                <li><a href="/chinh-sach-doi-tra-hang-va-hoan-tien.html"
-                       title="Chính Sách Đổi Trả Hàng Và Hoàn Tiền " rel="nofollow">Chính Sách Đổi Trả Hàng Và Hoàn
-                        Tiền </a></li>
-
-                <li><a href="/chinh-sach-quy-trinh-xu-ly-khieu-nai.html"
-                       title="Chính Sách Quy Trình Xử Lý Khiếu Lại " rel="nofollow">Chính Sách Quy Trình Xử Lý Khiếu
-                        Lại </a></li>
-
-                <li><a href="/chinh-sach-bao-mat.html" title="Chính Sách Bảo Mật " rel="nofollow">Chính Sách Bảo
-                        Mật </a></li>
-
-                <li><a href="/cau-hoi-thuong-gap.html" title="Câu hỏi thường gặp" rel="nofollow">Câu hỏi thường
-                        gặp</a></li>
-
-            </ul>
-        </div>
-
-
-        <div class="f-top-3">
-            <h4>Thông tin công ty</h4>
-            <ul class="ls">
-
-                <li>Địa chỉ: Cụm 5 Xã Hát Môn - Phúc Thọ - Hà Nội</li>
-                <li>SĐT: Liên hệ</li>
-                <li>Email: Hoangchien270994@gmail.com</li>
-                <li>Website: http://tubephoanmy.vn</li>
-
-            </ul>
-
-            <div class="clearfix"></div>
-        </div>
-
-
-        <div class="f-top-4">
-            <h4>Tổng đài trợ giúp</h4>
-
-            <div class="list_hotro">
-                <h3>Hỗ trợ bán lẻ</h3>
-                <p class="nhanvien">Support:<span> <a href="tel:+xxx">Liên hệ</a></span></p>
-<!--                <p class="nhanvien">Mr Lợi:<span> <a href="tel:+01297504186">0129.7504.186</a></span></p>-->
-                <p class="nhanvien">
-                </p>
-
-
+        <div class="col-1-5 tab-col-1-1 mobile-col-1-1">
+            <div class="title-Link">Link Social Network</div>
+            <div class="smo-footer1">
+                <a href="https://www.facebook.com/NewlandHouse"><i
+                            class="fa fa-facebook smo-footer"></i></a>
+                <a href="//google.com"><i class="fa fa-google-plus smo-footer"></i></a>
+                <a href="//twitter.com"><i class="fa fa-twitter smo-footer"></i></a>
+                <a href="//linkedin.com"><i class="fa fa-linkedin smo-footer"></i></a>
+                <a href="//youtube.com"><i class="fa fa-youtube smo-footer"></i></a>
+                <a href="/sitemap/"><i class="fa fa-sitemap smo-footer"></i></a>
             </div>
-
-
         </div>
-    </div>
-    <div class="all">
-
+        <div class="col-1-5 tab-col-1-1 mobile-col-1-1">
+            <div class="title-Link">Support Online</div>
+            <div class="smo-footer1">
+                <a href="?chat"><i aria-hidden="true" class="fa fa-skype"></i></a>
+                <a href="?chat"><i aria-hidden="true" class="fa fa-skype"></i></a>
+                <a href="?chat"><i aria-hidden="true" class="fa fa-skype"></i></a>
+                <a href="?chat"><i aria-hidden="true" class="fa fa-skype"></i></a>
+            </div>
+        </div>
+        <div class="c20"></div>
     </div>
 </div>

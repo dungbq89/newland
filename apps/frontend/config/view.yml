@@ -23,6 +23,11 @@ default:
     - grid.css
   javascripts:
     - jquery-1.10.1.min.js
+    - jquery.form.min.js
+    - jquery-ui-1.10.3.custom.min.js
+    - jquery.mmenu.min.all.js
+    - script.js
+    - swiper.js
 #    - library.js
 
   has_layout:     true

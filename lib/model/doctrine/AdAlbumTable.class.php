@@ -66,4 +66,13 @@ class AdAlbumTable extends Doctrine_Table
             ->orderBy('event_date DESC');
         return $q;
     }
+
+    public static function getAllAlbum()
+    {
+        $q = AdAlbumTable::getInstance()->createQuery()
+            ->where('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderBy('updated_at DESC');
+        return $q;
+    }
 }

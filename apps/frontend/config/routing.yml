@@ -1,5 +1,16 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+chain:
+  url: /chain
+  param: {module: pageChain, action: index}
+#về chúng tôi
+about_us:
+  url: /about-us
+  param: {module: pageAboutUs, action: index}
+#giói thiệu dịch vụ
+services:
+  url: /services
+  param: {module: pageServices, action: index}
 #trang hiển thị chi tiết tin tức
 article_detail:
   url: /bai-viet/:slug
@@ -13,9 +24,9 @@ product_all:
   url: /all/:page
   param: {module: pageProduct, action: list, page:''}
 #trang hiển thị chi tiết tin tức
-category_news:
-  url: /tin-tuc/:slug
-  param: {module: pageNews, action: index, slug: ''}
+news:
+  url: /news
+  param: {module: pageNews, action: index}
 
 products:
   url: /chuyen-muc/:slug/:page
@@ -53,8 +64,8 @@ page_search:
   
 #trang danh ba hoi vien
 contact:
-  url: /lien-he
-  param: {module: pageContact, action: index}
+  url: /content/:slug
+  param: {module: pageContact, action: index, slug: ''}
 personnal:
   url: /danh-ba-hoi-vien
   param: {module: pagePersonal, action: index}
