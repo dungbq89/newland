@@ -78,6 +78,14 @@ all:
             Danh sách quyền hạn:
               route: sf_guard_permission
               icon: users6.png
+        Ngôn ngữ:
+          dropdown:
+            Tiếng Việt:
+              route: pageVI
+            Tiếng Anh:
+              route: pageEN
+            Tiếng Hàn:
+              route: pageKO
 
   sf_captchagd:
      image_width:                180 # image width in pixels
