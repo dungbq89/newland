@@ -9,7 +9,7 @@
         <div class="header-2-3">
             <div class="top-menu">
                 <div class="langbar" align="right">
-                    <a href="/vn/">Tiếng Việt</a> | <a href="/">English</a> | <a href="/kr/">Korean</a>
+                    <a href="<?php echo url_for2('homepage',array('lang'=>'vi')) ?>">Tiếng Việt</a> | <a href="<?php echo url_for2('homepage',array('lang'=>'en')) ?>">English</a> | <a href="<?php echo url_for2('homepage',array('lang'=>'ko')) ?>">Korean</a>
                 </div>
             </div>
             <div class="hotline-banner hide-on-mobile hide-on-tab hide-on-pad">

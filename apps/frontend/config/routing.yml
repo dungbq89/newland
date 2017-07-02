@@ -77,9 +77,9 @@ ajax_load_video:
 
 # default rules
 homepage:
-  url:   /:slug
+  url:   /:lang
 #  param: { module: pageHome, action: index }
-  param: { module: pageHome, action: index, slug: '' }
+  param: { module: pageHome, action: index, lang: '' }
   requirements: { sf_method: get }
 
 # generic rules

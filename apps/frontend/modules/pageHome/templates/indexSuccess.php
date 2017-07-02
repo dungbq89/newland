@@ -539,7 +539,4 @@
             </div>
         </div>
     </div>
-
-    <?php include_component('moduleMenu','contentFooter'); ?>
-
 </div>
