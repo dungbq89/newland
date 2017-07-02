@@ -73,6 +73,14 @@ all:
               credentials: [[admin,subAdmin]]
               route: ad_album
               icon: computer.png
+            Quản lý thuộc tính:
+              credentials: [[admin]]
+              route: parameter
+              icon: link71.png
+            Quản lý danh mục thuộc tính:
+              credentials: [[admin]]
+              route: parameter_category
+              icon: link71.png
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:

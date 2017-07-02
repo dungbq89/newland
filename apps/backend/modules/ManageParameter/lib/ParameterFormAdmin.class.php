@@ -10,7 +10,25 @@
  */
 class ParameterFormAdmin extends BaseParameterForm
 {
-  public function configure()
-  {
-  }
+    public function configure()
+    {
+        $cat = ParameterCategoryTable::getInstance()->getListParamCat();
+        $this->setWidgets(array(
+            'name' => new sfWidgetFormInputText(),
+            'priority' => new sfWidgetFormInputText(),
+            'cat_id' => new sfWidgetFormInputText(),
+            'is_active' => new sfWidgetFormInputCheckbox(),
+        ));
+
+        $this->setValidators(array(
+            'name' => new sfValidatorString(array('max_length' => 255)),
+            'priority' => new sfValidatorInteger(array('required' => false)),
+            'cat_id' => new sfValidatorInteger(array('required' => false)),
+            'is_active' => new sfValidatorBoolean(array('required' => false)),
+        ));
+
+        $this->widgetSchema->setNameFormat('parameter[%s]');
+
+        $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+    }
 }
