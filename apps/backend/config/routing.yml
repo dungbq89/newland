@@ -1,3 +1,21 @@
+parameter:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Parameter
+    module:               ManageParameter
+    prefix_path:          /ManageParameter
+    column:               id
+    with_wildcard_routes: true
+
+parameter_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ParameterCategory
+    module:               ManageParameterCategory
+    prefix_path:          /ManageParameterCategory
+    column:               id
+    with_wildcard_routes: true
+
 vtp_product_image:
   class: sfDoctrineRouteCollection
   options:

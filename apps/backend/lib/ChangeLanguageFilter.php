@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by JetBrains PhpStorm.
  * User: chuyennv2
@@ -8,13 +9,16 @@
  */
 class ChangeLanguageFilter extends sfFilter
 {
-  public function execute($filterChain) {
-    $sfContext = sfContext::getInstance();
-
-    if($sfContext->getRequest()->hasParameter('lang')){
-      $lang = $sfContext->getRequest()->getParameter('lang');
-      $sfContext->getUser()->setCulture($lang);
+    public function execute($filterChain)
+    {
+        $sfContext = sfContext::getInstance();
+        if ($sfContext->getRequest()->hasParameter('lang')) {
+            $lang = $sfContext->getRequest()->getParameter('lang');
+            $sfContext->getUser()->setCulture($lang);
+        } else {
+            if (!sfContext::getInstance()->getUser()->getCulture())
+                $sfContext->getUser()->setCulture('vi');
+        }
+        $filterChain->execute();
     }
-    $filterChain->execute();
-  }
 }
