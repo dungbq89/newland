@@ -10,13 +10,19 @@ Doctrine_Manager::getInstance()->bindComponent('AdChainImage', 'doctrine');
  * @property string $file_path
  * @property string $extension
  * @property integer $priority
+ * @property integer $product
+ * @property boolean $is_active
  * 
  * @method string       getFilePath()  Returns the current record's "file_path" value
  * @method string       getExtension() Returns the current record's "extension" value
  * @method integer      getPriority()  Returns the current record's "priority" value
+ * @method integer      getProduct()   Returns the current record's "product" value
+ * @method boolean      getIsActive()  Returns the current record's "is_active" value
  * @method AdChainImage setFilePath()  Sets the current record's "file_path" value
  * @method AdChainImage setExtension() Sets the current record's "extension" value
  * @method AdChainImage setPriority()  Sets the current record's "priority" value
+ * @method AdChainImage setProduct()   Sets the current record's "product" value
+ * @method AdChainImage setIsActive()  Sets the current record's "is_active" value
  * 
  * @package    Web_Portals
  * @subpackage model
@@ -41,9 +47,19 @@ abstract class BaseAdChainImage extends sfDoctrineRecord
              ));
         $this->hasColumn('priority', 'integer', 5, array(
              'type' => 'integer',
-             'notnull' => true,
              'comment' => 'Độ ưu tiên hiển thị',
              'length' => 5,
+             ));
+        $this->hasColumn('product', 'integer', 15, array(
+             'type' => 'integer',
+             'comment' => 'id product',
+             'length' => 15,
+             ));
+        $this->hasColumn('is_active', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => false,
+             'default' => false,
+             'comment' => 'Trạng thái',
              ));
     }
 

@@ -27,7 +27,7 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @property string $parameter_ids
  * @property string $list_image
  * @property string $email
- * @property string $msiisdn
+ * @property string $msisdn
  * @property Doctrine_Collection $ProductCategory
  * 
  * @method string              getName()            Returns the current record's "name" value
@@ -50,7 +50,7 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @method string              getParameterIds()    Returns the current record's "parameter_ids" value
  * @method string              getListImage()       Returns the current record's "list_image" value
  * @method string              getEmail()           Returns the current record's "email" value
- * @method string              getMsiisdn()         Returns the current record's "msiisdn" value
+ * @method string              getMsisdn()          Returns the current record's "msisdn" value
  * @method Doctrine_Collection getProductCategory() Returns the current record's "ProductCategory" collection
  * @method VtpProductsCategory setName()            Sets the current record's "name" value
  * @method VtpProductsCategory setAddress()         Sets the current record's "address" value
@@ -72,7 +72,7 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @method VtpProductsCategory setParameterIds()    Sets the current record's "parameter_ids" value
  * @method VtpProductsCategory setListImage()       Sets the current record's "list_image" value
  * @method VtpProductsCategory setEmail()           Sets the current record's "email" value
- * @method VtpProductsCategory setMsiisdn()         Sets the current record's "msiisdn" value
+ * @method VtpProductsCategory setMsisdn()          Sets the current record's "msisdn" value
  * @method VtpProductsCategory setProductCategory() Sets the current record's "ProductCategory" collection
  * 
  * @package    Web_Portals
@@ -189,7 +189,7 @@ abstract class BaseVtpProductsCategory extends sfDoctrineRecord
              'comment' => 'Email',
              'length' => 255,
              ));
-        $this->hasColumn('msiisdn', 'string', 255, array(
+        $this->hasColumn('msisdn', 'string', 255, array(
              'type' => 'string',
              'comment' => 'sdt',
              'length' => 255,

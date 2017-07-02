@@ -27,7 +27,7 @@ class ParameterFormFilterAdmin extends BaseParameterFormFilter
             'name' => new sfValidatorPass(array('required' => false)),
             'priority' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
             'cat_id' => new sfValidatorChoice(array(
-                'choices' => array_values($cat),
+                'choices' => array_keys($cat),
                 'required' => false,
             ), array()),
             'is_active' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),

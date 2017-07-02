@@ -81,6 +81,10 @@ all:
               credentials: [[admin]]
               route: parameter_category
               icon: link71.png
+            Quản lý danh sách ảnh sản phẩm:
+              credentials: [[admin]]
+              route: ad_chain_image
+              icon: link71.png
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:

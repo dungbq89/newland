@@ -1,35 +1,35 @@
 generator:
   class: tmcTwitterBootstrapDoctrineGenerator
   param:
-    model_class:           Parameter
+    model_class:           AdChainImage
     theme:                 tmcTwitterBootstrap
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          parameter
+    route_prefix:          ad_chain_image
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
     config:
       actions: ~
       fields:
-        name: {label: "Tên"}
+        file_path: {label: "Ảnh"}
         is_active: {label: "Trạng thái"}
         priority: {label: "Sắp sếp"}
-        cat_id: {label: "Danh mục"}
+        product: {label: "Phòng"}
       list:
-        display: [name, is_active]
-        title: Danh sách thuộc tính
+        display: [file_path, product, is_active, priority]
+        title: Danh sánh ảnh phòng
       filter:
-        class: ParameterFormFilterAdmin
-        display: [name, cat_id, is_active]
+        display: [product, is_active]
+        class: AdChainImageFormFilterAdmin
       form:
-        class: ParameterFormAdmin
-        display: [name, cat_id,priority, is_active]
+        display: [file_path, product, is_active, priority]
+        class: AdChainImageFormAdmin
       edit:
-        title: Cập nhập thuộc tính
+        title: Thêm mới ảnh phòng
       new:
-        title: Thêm mới thuộc tính
+        title: Cập nhập ảnh phòng
       show:    ~
       revert:  ~

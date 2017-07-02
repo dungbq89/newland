@@ -13,7 +13,10 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        name: {label: "Tên"}
+        is_active: {label: "Trạng thái"}
+        priority: {label: "Sắp sếp"}
       list:
         display: [name, is_active]
         title: Danh mục thuộc tính

@@ -21,8 +21,8 @@ class VtpProductsCategoryTable extends Doctrine_Table
     public static function getListCategoryByPortal($portalId)
     {
         $sql = VtpProductsCategoryTable::getInstance()->createQuery('a')
-            ->andWhere('a.portal_id=?',$portalId)
-            ->andWhere('a.lang=?',sfContext::getInstance()->getUser()->getCulture())
+            ->andWhere('a.portal_id=?', $portalId)
+            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('a.priority asc');
         return $sql->execute();
     }
@@ -32,7 +32,7 @@ class VtpProductsCategoryTable extends Doctrine_Table
         $sql = VtpProductsCategoryTable::getInstance()->createQuery('a')
             ->select('name, image_path, description, link')
             ->andWhere('a.is_active=1')
-            ->andWhere('a.lang=?',sfContext::getInstance()->getUser()->getCulture())
+            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('a.priority asc');
         return $sql;
     }
@@ -60,7 +60,7 @@ class VtpProductsCategoryTable extends Doctrine_Table
         $sql = VtpProductsCategoryTable::getInstance()->createQuery()
             ->select('name, image_path, link, priority, description, slug')
             ->andWhere('is_active=1')
-            ->andWhere('lang=?',sfContext::getInstance()->getUser()->getCulture())
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('priority asc');
         return $sql->fetchArray();
     }
@@ -71,19 +71,19 @@ class VtpProductsCategoryTable extends Doctrine_Table
         $sql = VtpProductsCategoryTable::getInstance()->createQuery('a')
             ->select('name, image_path, description, meta, keywords')
             ->where('a.is_active=1')
-            ->andWhere('a.slug=?',$slug)
-            ->andWhere('a.lang=?',sfContext::getInstance()->getUser()->getCulture())
+            ->andWhere('a.slug=?', $slug)
+            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('a.priority asc');
         return $sql->fetchOne();
     }
 
-    public static function getCategoryByParentID($parentId, $limit=null)
+    public static function getCategoryByParentID($parentId, $limit = null)
     {
         $query = VtpProductsCategoryTable::getInstance()->createQuery()
             ->where(($parentId != '') ? 'parent_id=?' : '(parent_id=? or parent_id is null)', $parentId)
             ->andWhere('is_active=1')
             ->orderby('priority asc');
-        if($limit!=null){
+        if ($limit != null) {
             $query->limit($limit);
         }
         return $query->execute();
@@ -101,9 +101,8 @@ class VtpProductsCategoryTable extends Doctrine_Table
     {
         $query = VtpProductsCategoryTable::getInstance()->createQuery()
             ->select('name, parent_id, level, priority')
-
             ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture());
-           // ->orderby('priority asc');
+        // ->orderby('priority asc');
         if ($listChild != '') {
             $query->andWhereNotIn('id', explode(',', $listChild));
         }
@@ -124,16 +123,18 @@ class VtpProductsCategoryTable extends Doctrine_Table
         return $arrResult;
     }
 
-    public static function getCategoryByLevel($level, $limit=null){
+    public static function getCategoryByLevel($level, $limit = null)
+    {
         $sql = VtpProductsCategoryTable::getInstance()->createQuery('a')
-            ->where('a.level=?',$level)
-            ->andWhere('a.is_active=?',VtCommonEnum::NUMBER_ONE)
+            ->where('a.level=?', $level)
+            ->andWhere('a.is_active=?', VtCommonEnum::NUMBER_ONE)
             ->orderBy('a.priority asc');
-        if($limit){
+        if ($limit) {
             $sql->limit($limit);
         }
         return $sql;
     }
+
     //lay danh sach chuyen muc san pham trang chu
     public static function getProductCategoryHome($parentId, $limit)
     {
@@ -161,5 +162,35 @@ class VtpProductsCategoryTable extends Doctrine_Table
             $strCat = substr($strCat, 0, strlen($strCat) - 1);
         }
         return $strCat;
+    }
+
+
+    # conghuy
+    public static function getListChain($cbx = true, $is_active = true)
+    {
+        $q = VtpProductsCategoryTable::getInstance()->createQuery();
+        if ($is_active) {
+            $q->andwhere('is_active=?', 1);
+        }
+        $q->andwhere('lang=?', sfContext::getInstance()->getUser()->getCulture());
+        $query = $q->orderBy('name desc')->fetchArray();
+        $cat = [];
+        if ($cbx) {
+            $cat['0'] = sfContext::getInstance()->getI18N()->__('--- Tất cả ---');
+        }
+        self::getAllSubCategory($query, $parent_id = 0, $char = '', $cat);
+
+        return $cat;
+    }
+
+    public static function getAllSubCategory($categories, $parent_id = 0, $char = '', &$cat)
+    {
+        foreach ($categories as $key => $item) {
+            if ($item['parent_id'] == $parent_id) {
+                $cat[$item['id']] = $char . $item['name'];
+                unset($categories[$key]);
+                self::getAllSubCategory($categories, $item['id'], $char . '-- ', $cat);
+            }
+        }
     }
 }

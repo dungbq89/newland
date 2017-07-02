@@ -350,7 +350,7 @@ VtpProductsCategory:
     parameter_ids: { type: string(255), comment: "Danh sách parameter"}
     list_image: { type: string(255), comment: "Danh sách anh"}
     email: { type: string(255), comment: "Email"}
-    msiisdn: { type: string(255), comment: "sdt"}
+    msisdn: { type: string(255), comment: "sdt"}
 
 VtpProducts:
   tableName: vtp_products
@@ -527,4 +527,6 @@ AdChainImage:
   columns:
     file_path: { type: string(255), notnull: true, comment: "Đường dẫn file"}
     extension: { type: string(200), comment: "phần mở rộng của file"}
-    priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
+    priority: { type: integer(5), comment: "Độ ưu tiên hiển thị" }
+    product: { type: integer(15), comment: "id product" }
+    is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
