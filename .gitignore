@@ -1,2 +1,7 @@
 /cache
 /.idea
+/config/databases.yml
+/data/sql/schema.sql
+/lib/model/doctrine/base/BaseAdAdvertise.class.php
+/.gitignore
+/data
