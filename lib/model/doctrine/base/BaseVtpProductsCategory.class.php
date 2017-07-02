@@ -23,7 +23,7 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @property integer $parent_id
  * @property integer $level
  * @property string $lat
- * @property string $long
+ * @property string $log
  * @property string $parameter_ids
  * @property string $list_image
  * @property string $email
@@ -46,7 +46,7 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @method integer             getParentId()        Returns the current record's "parent_id" value
  * @method integer             getLevel()           Returns the current record's "level" value
  * @method string              getLat()             Returns the current record's "lat" value
- * @method string              getLong()            Returns the current record's "long" value
+ * @method string              getLog()             Returns the current record's "log" value
  * @method string              getParameterIds()    Returns the current record's "parameter_ids" value
  * @method string              getListImage()       Returns the current record's "list_image" value
  * @method string              getEmail()           Returns the current record's "email" value
@@ -68,7 +68,7 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProductsCategory', 'doctrine'
  * @method VtpProductsCategory setParentId()        Sets the current record's "parent_id" value
  * @method VtpProductsCategory setLevel()           Sets the current record's "level" value
  * @method VtpProductsCategory setLat()             Sets the current record's "lat" value
- * @method VtpProductsCategory setLong()            Sets the current record's "long" value
+ * @method VtpProductsCategory setLog()             Sets the current record's "log" value
  * @method VtpProductsCategory setParameterIds()    Sets the current record's "parameter_ids" value
  * @method VtpProductsCategory setListImage()       Sets the current record's "list_image" value
  * @method VtpProductsCategory setEmail()           Sets the current record's "email" value
@@ -169,7 +169,7 @@ abstract class BaseVtpProductsCategory extends sfDoctrineRecord
              'comment' => 'tọa độ latitude',
              'length' => 255,
              ));
-        $this->hasColumn('long', 'string', 255, array(
+        $this->hasColumn('log', 'string', 255, array(
              'type' => 'string',
              'comment' => 'tọa dộ longtidude',
              'length' => 255,

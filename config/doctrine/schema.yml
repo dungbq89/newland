@@ -346,7 +346,7 @@ VtpProductsCategory:
     parent_id: { type: integer(5), comment: "Danh mục cha"}
     level: { type: integer, default: 0, comment: "phân cấp chuyên mục"}
     lat: { type: string(255), comment: "tọa độ latitude"}
-    long: { type: string(255), comment: "tọa dộ longtidude"}
+    log: { type: string(255), comment: "tọa dộ longtidude"}
     parameter_ids: { type: string(255), comment: "Danh sách parameter"}
     list_image: { type: string(255), comment: "Danh sách anh"}
     email: { type: string(255), comment: "Email"}
@@ -530,3 +530,4 @@ AdChainImage:
     priority: { type: integer(5), comment: "Độ ưu tiên hiển thị" }
     product: { type: integer(15), comment: "id product" }
     is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
+    lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }

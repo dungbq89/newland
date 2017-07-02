@@ -52,6 +52,7 @@ class AdChainImageFormAdmin extends BaseAdChainImageForm
                     'invalid' => $i18n->__('Ch? ???c upload các file có ??nh d?ng .jpg, .gif, .png')
                 )),
             'is_active' => new sfValidatorBoolean(array('required' => false)),
+            'lang' => new sfValidatorPass(),
         ));
         $this->widgetSchema->setNameFormat('AdChainImageFormAdmin[%s]');
 

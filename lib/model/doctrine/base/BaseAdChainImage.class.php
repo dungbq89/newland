@@ -12,17 +12,20 @@ Doctrine_Manager::getInstance()->bindComponent('AdChainImage', 'doctrine');
  * @property integer $priority
  * @property integer $product
  * @property boolean $is_active
+ * @property string $lang
  * 
  * @method string       getFilePath()  Returns the current record's "file_path" value
  * @method string       getExtension() Returns the current record's "extension" value
  * @method integer      getPriority()  Returns the current record's "priority" value
  * @method integer      getProduct()   Returns the current record's "product" value
  * @method boolean      getIsActive()  Returns the current record's "is_active" value
+ * @method string       getLang()      Returns the current record's "lang" value
  * @method AdChainImage setFilePath()  Sets the current record's "file_path" value
  * @method AdChainImage setExtension() Sets the current record's "extension" value
  * @method AdChainImage setPriority()  Sets the current record's "priority" value
  * @method AdChainImage setProduct()   Sets the current record's "product" value
  * @method AdChainImage setIsActive()  Sets the current record's "is_active" value
+ * @method AdChainImage setLang()      Sets the current record's "lang" value
  * 
  * @package    Web_Portals
  * @subpackage model
@@ -60,6 +63,12 @@ abstract class BaseAdChainImage extends sfDoctrineRecord
              'notnull' => false,
              'default' => false,
              'comment' => 'Trạng thái',
+             ));
+        $this->hasColumn('lang', 'string', 10, array(
+             'type' => 'string',
+             'notnull' => true,
+             'comment' => 'Đa ngôn ngữ',
+             'length' => 10,
              ));
     }
 
