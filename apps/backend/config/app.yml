@@ -82,10 +82,13 @@ all:
           dropdown:
             Tiếng Việt:
               route: pageVI
+              icon: users6.png
             Tiếng Anh:
               route: pageEN
+              icon: users6.png
             Tiếng Hàn:
               route: pageKO
+              icon: users6.png
 
   sf_captchagd:
      image_width:                180 # image width in pixels
