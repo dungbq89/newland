@@ -302,6 +302,16 @@ ajax_load_service_detail:
 homepage:
   url:   /
   param: { module: homePage, action: index }
+pageEN:
+  url: /?lang=en
+  param: {  module: vtHomePage, action: index }
+
+pageVI:
+  url: /?lang=vi
+  param: {  module: vtHomePage, action: index }
+pageKO:
+  url: /?lang=ko
+  param: {  module: vtHomePage, action: index }
 # generic rules
 # please, remove them by adding more specific rules
 default_index:
