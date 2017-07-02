@@ -14,10 +14,18 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      list:
+        display: [name, is_active]
+        title: Danh sách thuộc tính
+      filter:
+        class: ParameterFormFilterAdmin
+        display: [name, cat_id, is_active]
+      form:
+        class: ParameterFormAdmin
+        display: [name, cat_id, is_active]
+      edit:
+        title: Cập nhập thuộc tính
+      new:
+        title: Thêm mới thuộc tính
       show:    ~
       revert:  ~

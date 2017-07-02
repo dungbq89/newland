@@ -331,6 +331,7 @@ VtpProductsCategory:
     Timestampable: ~
   columns:
     name: { type: string(255), comment: "Tên chuyên mục"}
+    address: { type: string(255), comment: "dia chi"}
     image_path: { type: string(255), comment: "Đường dẫn file"}
     link: { type: string(255), comment: "Đường dẫn chi tiết trên viettel shop"}
     priority: { type: integer(8), default: 0, comment: "Thứ tự hiển thị"}
@@ -344,6 +345,12 @@ VtpProductsCategory:
     keywords: { type: string(255), comment: "Nội dung keywords"}
     parent_id: { type: integer(5), comment: "Danh mục cha"}
     level: { type: integer, default: 0, comment: "phân cấp chuyên mục"}
+    lat: { type: string(255), comment: "tọa độ latitude"}
+    long: { type: string(255), comment: "tọa dộ longtidude"}
+    parameter_ids: { type: string(255), comment: "Danh sách parameter"}
+    list_image: { type: string(255), comment: "Danh sách anh"}
+    email: { type: string(255), comment: "Email"}
+    msiisdn: { type: string(255), comment: "sdt"}
 
 VtpProducts:
   tableName: vtp_products
@@ -372,9 +379,6 @@ VtpProducts:
     lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
     meta: { type: string(255), comment: "Nội dung meta" }
     keywords: { type: string(255), comment: "Nội dung keywords"}
-    lat: { type: string(255), comment: "tọa độ latitude"}
-    long: { type: string(255), comment: "tọa dộ longtidude"}
-    parameter_ids: { type: string(255), comment: "Danh sách parameter"}
   relations:
     VtpProducts: { class: VtpProductsCategory, local: category_id, type: one, foreignAlias: ProductCategory }
 VtpProductImage:
@@ -480,3 +484,47 @@ Parameter:
     cat_id: {type: integer(8), default: 0}
     is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
     lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
+AdFeedBack:
+  #connection: doctrine
+  tableName: ad_feed_back
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    name: { type: string(255), notnull: true,  comment: "Tên"}
+    email: { type: string(255), notnull: true,  comment: "email"}
+    title: { type: string(255), notnull: true,  comment: "tieu de"}
+    message: { type: string(255), notnull: true,  comment: "tin nhan"}
+    is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
+    lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
+SendMail:
+  #connection: doctrine
+  tableName: send_mail
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    email: { type: string(255), notnull: true,  comment: "email"}
+    is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
+    lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
+AdConfig:
+  #connection: doctrine
+  tableName: ad_config
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    config_key: { type: string(255), notnull: true,  comment: "config_key"}
+    config_val: { type: string, notnull: true,  comment: "config_val"}
+    is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
+    lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
+AdChainImage:
+  #connection: doctrine
+  tableName: ad_chain_image
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    file_path: { type: string(255), notnull: true, comment: "Đường dẫn file"}
+    extension: { type: string(200), comment: "phần mở rộng của file"}
+    priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }

@@ -15,11 +15,17 @@ generator:
       actions: ~
       fields:  ~
       list:
+        display: [name, is_active]
+        title: Danh mục thuộc tính
       filter:
         display: [name, is_active]
-        class:
-      form:    ~
-      edit:    ~
-      new:     ~
+        class: ParameterCategoryFormFilterAdmin
+      form:
+        class: ParameterCategoryFormAdmin
+        display: [name, priority, is_active]
+      edit:
+        title: Cập nhập danh mục thuộc tính
+      new:
+        title: Tạo mới danh mục thuộc tính
       show:    ~
       revert:  ~

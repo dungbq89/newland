@@ -13,4 +13,18 @@ require_once dirname(__FILE__).'/../lib/ManageParameterCategoryGeneratorHelper.c
  */
 class ManageParameterCategoryActions extends autoManageParameterCategoryActions
 {
+
+    protected function getPager()
+    {
+
+        $query = $this->buildQuery();
+        $query->andwhere('lang=?', sfContext::getInstance()->getUser()->getCulture());
+        $pages = ceil($query->count() / $this->getMaxPerPage());
+        $pager = $this->configuration->getPager('ParameterCategory');
+        $pager->setQuery($query);
+        $pager->setPage(($this->getPage() > $pages) ? $pages : $this->getPage());
+        $pager->init();
+
+        return $pager;
+    }
 }

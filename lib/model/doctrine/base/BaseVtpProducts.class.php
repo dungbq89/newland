@@ -28,9 +28,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @property string $lang
  * @property string $meta
  * @property string $keywords
- * @property string $lat
- * @property string $long
- * @property string $parameter_ids
  * @property VtpProductsCategory $VtpProducts
  * @property Doctrine_Collection $ProductImage
  * 
@@ -55,9 +52,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @method string              getLang()                 Returns the current record's "lang" value
  * @method string              getMeta()                 Returns the current record's "meta" value
  * @method string              getKeywords()             Returns the current record's "keywords" value
- * @method string              getLat()                  Returns the current record's "lat" value
- * @method string              getLong()                 Returns the current record's "long" value
- * @method string              getParameterIds()         Returns the current record's "parameter_ids" value
  * @method VtpProductsCategory getVtpProducts()          Returns the current record's "VtpProducts" value
  * @method Doctrine_Collection getProductImage()         Returns the current record's "ProductImage" collection
  * @method VtpProducts         setProductName()          Sets the current record's "product_name" value
@@ -81,9 +75,6 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @method VtpProducts         setLang()                 Sets the current record's "lang" value
  * @method VtpProducts         setMeta()                 Sets the current record's "meta" value
  * @method VtpProducts         setKeywords()             Sets the current record's "keywords" value
- * @method VtpProducts         setLat()                  Sets the current record's "lat" value
- * @method VtpProducts         setLong()                 Sets the current record's "long" value
- * @method VtpProducts         setParameterIds()         Sets the current record's "parameter_ids" value
  * @method VtpProducts         setVtpProducts()          Sets the current record's "VtpProducts" value
  * @method VtpProducts         setProductImage()         Sets the current record's "ProductImage" collection
  * 
@@ -205,21 +196,6 @@ abstract class BaseVtpProducts extends sfDoctrineRecord
         $this->hasColumn('keywords', 'string', 255, array(
              'type' => 'string',
              'comment' => 'Nội dung keywords',
-             'length' => 255,
-             ));
-        $this->hasColumn('lat', 'string', 255, array(
-             'type' => 'string',
-             'comment' => 'tọa độ latitude',
-             'length' => 255,
-             ));
-        $this->hasColumn('long', 'string', 255, array(
-             'type' => 'string',
-             'comment' => 'tọa dộ longtidude',
-             'length' => 255,
-             ));
-        $this->hasColumn('parameter_ids', 'string', 255, array(
-             'type' => 'string',
-             'comment' => 'Danh sách parameter',
              'length' => 255,
              ));
     }
