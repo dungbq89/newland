@@ -143,6 +143,7 @@ AdAdvertise:
     amount: { type: integer, comment: "Số lượng ảnh hiển thị", default: 0}
     width: { type: integer, comment: "Chiều rộng", default: 0}
     height: { type: integer, comment: "Chiều cao", default: 0}
+    lang: { type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
     is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái 0=chưa sử dụng, 1= sử dụng"}
 
 #Hình ảnh slide

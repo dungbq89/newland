@@ -14,6 +14,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAdvertise', 'doctrine');
  * @property integer $amount
  * @property integer $width
  * @property integer $height
+ * @property string $lang
  * @property boolean $is_active
  * @property Doctrine_Collection $AdvertiseImage
  * @property AdAdvertiseLocation $AdvertiseLocation
@@ -25,6 +26,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAdvertise', 'doctrine');
  * @method integer             getAmount()            Returns the current record's "amount" value
  * @method integer             getWidth()             Returns the current record's "width" value
  * @method integer             getHeight()            Returns the current record's "height" value
+ * @method string              getLang()              Returns the current record's "lang" value
  * @method boolean             getIsActive()          Returns the current record's "is_active" value
  * @method Doctrine_Collection getAdvertiseImage()    Returns the current record's "AdvertiseImage" collection
  * @method AdAdvertiseLocation getAdvertiseLocation() Returns the current record's "AdvertiseLocation" value
@@ -35,6 +37,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAdvertise', 'doctrine');
  * @method AdAdvertise         setAmount()            Sets the current record's "amount" value
  * @method AdAdvertise         setWidth()             Sets the current record's "width" value
  * @method AdAdvertise         setHeight()            Sets the current record's "height" value
+ * @method AdAdvertise         setLang()              Sets the current record's "lang" value
  * @method AdAdvertise         setIsActive()          Sets the current record's "is_active" value
  * @method AdAdvertise         setAdvertiseImage()    Sets the current record's "AdvertiseImage" collection
  * @method AdAdvertise         setAdvertiseLocation() Sets the current record's "AdvertiseLocation" value
@@ -84,6 +87,12 @@ abstract class BaseAdAdvertise extends sfDoctrineRecord
              'type' => 'integer',
              'comment' => 'Chiều cao',
              'default' => 0,
+             ));
+        $this->hasColumn('lang', 'string', 10, array(
+             'type' => 'string',
+             'notnull' => true,
+             'comment' => 'Đa ngôn ngữ',
+             'length' => 10,
              ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',
