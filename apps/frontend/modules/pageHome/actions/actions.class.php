@@ -12,13 +12,13 @@ class pageHomeActions extends sfActions {
 
     public function executeIndex(sfWebRequest $request) {
         //seo trang chu
-        $seoHomePage = VtSEO::getSeoHomepage();
-        if($seoHomePage){
-            $this->returnHtmlSeoPage($seoHomePage);
-        }
-        //Lấy danh sách sản phẩm theo chuyên mục
-        $productCategory = VtpProductsCategoryTable::getProductCategoryHome('',4)->execute();
-        $this->productCategory = $productCategory;
+//        $seoHomePage = VtSEO::getSeoHomepage();
+//        if($seoHomePage){
+//            $this->returnHtmlSeoPage($seoHomePage);
+//        }
+//        //Lấy danh sách sản phẩm theo chuyên mục
+//        $productCategory = VtpProductsCategoryTable::getProductCategoryHome('',4)->execute();
+//        $this->productCategory = $productCategory;
     }
 
     //render meta tag

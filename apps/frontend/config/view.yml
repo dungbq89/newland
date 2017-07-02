@@ -13,22 +13,17 @@ default:
     #robots:       index, follow
 
   stylesheets:
+    - jquery-ui.css
+    - /font-awesome-4.2.0/css/font-awesome.min.css
+    - /lato/css/lato.min.css
+    - swiper.css
+    - jquery.mmenu.all.css
     - style.css
-    - jquery.jqzoom.css
-    - /utils/highslide/highslide.css
-    - /utils/fancybox/jquery.fancybox.css
-    - /utils/zebradialog/default/zebradialog.css
-    - jquery.bxslider.css
-    - coder_update.css
-
+    - a.css
+    - grid.css
   javascripts:
-    - jquery.js
-    - jquery.carou-fredsel-6.1.0-packed.js
+    - jquery-1.10.1.min.js
 #    - library.js
-#    - /utils/fancybox/jquery.fancybox.js
-    - ajax-request.js
-    - jquery.bxslider.js
-    - daithanh.js
 
   has_layout:     true
   layout:         layout

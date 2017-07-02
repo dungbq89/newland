@@ -97,7 +97,7 @@ AdArticle:
 AdArticlesRelated:
   #connection: doctrine
   tableName: ad_article_related
-  
+
   columns:
     article_id: { type: integer, comment: "Id của bài tin tức"}
     related_article_id: { type: integer, comment: "Id của bài viết liên quan"}
