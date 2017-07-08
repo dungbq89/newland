@@ -24,8 +24,9 @@ generator:
         priority: {label: vị trí}
         is_active: { label: Trạng thái}
         link: { label: Đường dẫn}
-        meta: {label: Nội dung thẻ Description}
-        keywords: {label: Nội dung thẻ Keyword}
+        type: { label: Loại}
+#        meta: {label: Nội dung thẻ Description}
+#        keywords: {label: Nội dung thẻ Keyword}
       list:
         title: Danh sách chuyên mục tin tức
         fields:
@@ -53,8 +54,9 @@ generator:
           priority: {label: Vị trí*}
           image_path: {label: Ảnh đại diện}
           permission: { label: Phân quyền *}
-        display: [name, parent_id, description, meta, keywords, image_path, link, priority, is_active, permission, slug]
-      edit:    
+        display: [name, parent_id, description, image_path, link,type, priority, is_active, permission, slug]
+#        display: [name, parent_id, description, meta, keywords, image_path, link, priority, is_active, permission, slug]
+      edit:
         title: Chỉnh sửa chuyên mục
       new:
         title: Thêm mới chuyên mục

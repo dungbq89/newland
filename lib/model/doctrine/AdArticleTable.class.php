@@ -141,6 +141,7 @@ class AdArticleTable extends Doctrine_Table
         $query =  self::getActiveArticleQuery()
             ->select('a.title, a.alttitle, a.header, a.image_path, a.slug, a.published_time')
             ->andWhere('a.category_id=?', $catId)
+            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('a.published_time desc');
         return $query;
     }

@@ -9,15 +9,17 @@
  */
 class ChangeLanguageFilter extends sfFilter
 {
+
     public function execute($filterChain)
     {
         $sfContext = sfContext::getInstance();
-        if ($sfContext->getRequest()->hasParameter('lang')) {
+        if ($sfContext->getRequest()->hasParameter('lang') && $sfContext->getRequest()->getParameter('lang') != '') {
             $lang = $sfContext->getRequest()->getParameter('lang');
             $sfContext->getUser()->setCulture($lang);
         } else {
-            if (!sfContext::getInstance()->getUser()->getCulture())
+            if (sfContext::getInstance()->getUser()->getCulture() == '' || sfContext::getInstance()->getUser()->getCulture() == null) {
                 $sfContext->getUser()->setCulture('vi');
+            }
         }
         $filterChain->execute();
     }

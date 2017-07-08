@@ -2,22 +2,7 @@
     <link href="css/flexslider.css" rel="stylesheet" type="text/css">
     <div class="box-slide" style="min-height:500px">
         <div style="position:relative;">
-            <section class="slider">
-                <div class="flexslider">
-                    <ul class="slides">
-                        <li style="position:relative">
-                            <a href="" target=""><img src="/images/slideshow/1.jpg" alt="Slide 5 - English"
-                                                      width="100%"/></a>
-
-                        </li>
-                        <li style="position:relative">
-                            <a href="" target=""><img src="/images/slideshow/1.jpg" alt="Slide 5 - English"
-                                                      width="100%"/></a>
-
-                        </li>
-                    </ul>
-                </div>
-            </section>
+        <?php include_component('pageHome', 'slide') ?>
 
             <div style="max-width:1160px; margin:auto;">
                 <div class="box-booking-slide">

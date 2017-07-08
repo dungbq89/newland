@@ -15,6 +15,7 @@ class VtHelper
     const VT_MSISDN_PATTERN = '/^8496\d{7}$|^0?96\d{7}$|^8497\d{7}$|^0?97\d{7}$|^8498\d{7}$|^0?98\d{7}$|^8416\d{8}$|^0?16\d{8}$/'; // So dien thoai viettel
     const VT_NOT_UNICODE_PATTERN = '/^[A-Za-z0-9\-\_\]{1,255}$/';
     const VT_NOT_UNICODE_SPECIAL_CHAR_PATTERN = '/^[0-9A-Za-z\_\s\!\@\#\$\%\^\&\*\(\)\[\]\{\}\,\.\<\>\?\/\|\:\;\-\+\|\\\]*$/';
+
     // huync2: lay random ma OTP
     public static function genRandomString($length = 8)
     {
@@ -27,14 +28,17 @@ class VtHelper
 
         return $string;
     }
+
     //ngoctv login: 20140610
-    public static function encryptPassword($username, $password) {
+    public static function encryptPassword($username, $password)
+    {
         $toLowerUsername = strtolower($username);
         $passwordVal = $toLowerUsername . $password;
         return base64_encode(sha1(mb_convert_encoding($passwordVal, 'utf-16le', 'ascii'), true));
     }
 
-    public static function SHA1EncryptPassword($algorithm,$salt, $password) {
+    public static function SHA1EncryptPassword($algorithm, $salt, $password)
+    {
 
         if (false !== $pos = strpos($algorithm, '::')) {
             $algorithm = array(substr($algorithm, 0, $pos), substr($algorithm, $pos + 2));
@@ -50,13 +54,15 @@ class VtHelper
     }
 
 
-    public static function convertTypeTransaction($type){
-       $types =  array('CHTT' =>'Cửa hàng',
+    public static function convertTypeTransaction($type)
+    {
+        $types = array('CHTT' => 'Cửa hàng',
             'ST' => 'Siêu thị',
             'ĐLUQ' => 'Đại lý ủy quyền',
             'NVBHV' => 'Nhân viên bán hàng');
-        return isset($types[$type])? $types[$type]: '';
+        return isset($types[$type]) ? $types[$type] : '';
     }
+
     public static function getOriginalBccsGW($val, $tagOpenName, $tagCloseName)
     {
         $pos1 = strpos($val, $tagOpenName); //tag open
@@ -115,7 +121,8 @@ class VtHelper
      * @return boolean
      *
      */
-    public static function isViettelPhoneNumber($phone_no, $config = true, $setting = false, $patternName = 'app_mobile_pattern', $trim = true) {
+    public static function isViettelPhoneNumber($phone_no, $config = true, $setting = false, $patternName = 'app_mobile_pattern', $trim = true)
+    {
         $pattern = self::VT_MSISDN_PATTERN;
         if ($config) {
             $pattern = sfConfig::get($patternName, $pattern);
@@ -131,7 +138,8 @@ class VtHelper
         return false;
     }
 
-    public static function setAuthenticated($member, $firstLogin = false) {
+    public static function setAuthenticated($member, $firstLogin = false)
+    {
         sfcontext::getinstance()->getuser()->setMember($member);
         sfcontext::getinstance()->getuser()->setAuthenticated(true);
 //        sfcontext::getinstance()->getuser()->setFirstLogin($firstLogin);
@@ -157,9 +165,10 @@ class VtHelper
             return false;
     }
 
-    public static function validateNullParams($arrayParams){
-        foreach($arrayParams as $key => $values){
-            if(!$values && $values != '0')
+    public static function validateNullParams($arrayParams)
+    {
+        foreach ($arrayParams as $key => $values) {
+            if (!$values && $values != '0')
                 return $key;
         }
         return false;
@@ -190,7 +199,8 @@ class VtHelper
      * @created June Mar 17, 2014
      * @return string
      */
-    public static function getDeviceIp() {
+    public static function getDeviceIp()
+    {
 
         if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             $mobileIp = $_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -210,7 +220,8 @@ class VtHelper
          */
     }
 
-    public static function isV_internetIp($ip) {
+    public static function isV_internetIp($ip)
+    {
         $vInternetRange = sfConfig::get('app_ip_pool_v_internet');
         if (!empty($vInternetRange)) {
             foreach ($vInternetRange as $range) {
@@ -230,7 +241,8 @@ class VtHelper
      * @param $ip
      * @return bool
      */
-    public static function isV_wapIp($ip) {
+    public static function isV_wapIp($ip)
+    {
         $vInternetRange = sfConfig::get('app_ip_pool_v_wap');
         if (!empty($vInternetRange)) {
             foreach ($vInternetRange as $range) {
@@ -242,17 +254,19 @@ class VtHelper
         }
         return false;
     }
-/*
-* Ham kiem tra IP co nam trong dai IP cho phep khong
-* Tham khao: http://php.net/manual/en/function.ip2long.php
-* @author NamDT5
-* @created on 17/01/2013
-* @param $ip
-* @param $netAddr
-* @param $netMask
-* @return bool
-*/
-    public static function ipInNetwork($ip, $netAddr, $netMask) {
+
+    /*
+    * Ham kiem tra IP co nam trong dai IP cho phep khong
+    * Tham khao: http://php.net/manual/en/function.ip2long.php
+    * @author NamDT5
+    * @created on 17/01/2013
+    * @param $ip
+    * @param $netAddr
+    * @param $netMask
+    * @return bool
+    */
+    public static function ipInNetwork($ip, $netAddr, $netMask)
+    {
         if ($netMask <= 0) {
             return false;
         }
@@ -261,7 +275,8 @@ class VtHelper
         return (substr_compare($ipBinaryString, $netBinaryString, 0, $netMask) === 0);
     }
 
-    public static function getMobileNumber($msisdn, $type) {
+    public static function getMobileNumber($msisdn, $type)
+    {
         if (empty($type))
             $type = self::MOBILE_SIMPLE;
 
@@ -294,6 +309,7 @@ class VtHelper
                 break;
         }
     }
+
     public static function getUrlImagePath($objectStr, $imageName, $configDefaultImage = "app_url_media_default_file")
     {
         try {
@@ -314,10 +330,10 @@ class VtHelper
     }
     //tuanbm
     //ham su dung de generate ra the Embed Flash player(Su dung cho backend)
-    public static function generateEmbedJwplayer($url, $width = "300", $height = "20", $img='')
+    public static function generateEmbedJwplayer($url, $width = "300", $height = "20", $img = '')
     {
         return '<embed id="player" height="' . $height . '" width="' . $width . '"
-              flashvars="file=' . $url . '&controlbar=bottom&image='.$img.'" wmode="transparent" allowfullscreen="true"
+              flashvars="file=' . $url . '&controlbar=bottom&image=' . $img . '" wmode="transparent" allowfullscreen="true"
               allowscriptaccess="always" bgcolor="undefined"
               src="/js/jwplayer/player.swf" name="player"  type="application/x-shockwave-flash">';
     }
@@ -338,7 +354,8 @@ class VtHelper
     }
 
     //diepth
-    public static function htmlToView($html){
+    public static function htmlToView($html)
+    {
         $str = html_entity_decode(html_entity_decode($html));
         return VtHelper::strip_html_tags($str);
     }
@@ -487,7 +504,8 @@ class VtHelper
      * @param bool $crop
      * @return resource
      */
-    public static function resize_image($dir_root, $dir_module, $filename, $w, $h, $crop=FALSE) {
+    public static function resize_image($dir_root, $dir_module, $filename, $w, $h, $crop = FALSE)
+    {
         $in_filename = $dir_root . $dir_module . $filename;
         $out_filename = $dir_root . $dir_module . "thumbs/" . $filename;
         $file_name = basename($out_filename); //test.jpg
@@ -496,24 +514,24 @@ class VtHelper
             @mkdir($folderThumb, 0777, true);
         }
         //write file theo kich thuoc
-        $out_filename=$folderThumb.$w.'_'.$h.'_'.$file_name;
+        $out_filename = $folderThumb . $w . '_' . $h . '_' . $file_name;
 
         list($width, $height) = getimagesize($in_filename);
         $r = $width / $height;
         if ($crop) {
             if ($width > $height) {
-                $width = ceil($width-($width*abs($r-$w/$h)));
+                $width = ceil($width - ($width * abs($r - $w / $h)));
             } else {
-                $height = ceil($height-($height*abs($r-$w/$h)));
+                $height = ceil($height - ($height * abs($r - $w / $h)));
             }
             $newwidth = $w;
             $newheight = $h;
         } else {
-            if ($w/$h > $r) {
-                $newwidth = $h*$r;
+            if ($w / $h > $r) {
+                $newwidth = $h * $r;
                 $newheight = $h;
             } else {
-                $newheight = $w/$r;
+                $newheight = $w / $r;
                 $newwidth = $w;
             }
         }
@@ -526,6 +544,7 @@ class VtHelper
         ImageDestroy($src);
         return $out_filename;//tra ra duong dan thumbs
     }
+
     /**
      * @author ngoctv1
      * Ham encode the iframe trong truong hop insert truc tiep vao db
@@ -559,7 +578,7 @@ class VtHelper
     public static function encodeOutput($string, $force = FALSE)
     {
 
-        if (sfConfig::get('sf_escaping_strategy') == "1" && sfConfig::get('sf_escaping_method') == "ESC_SPECIALCHARS"  && $force == false) {
+        if (sfConfig::get('sf_escaping_strategy') == "1" && sfConfig::get('sf_escaping_method') == "ESC_SPECIALCHARS" && $force == false) {
             return htmlentities($string, ENT_QUOTES, 'UTF-8');//self::strip_html_tags_iframe($string, array('iframe','textarea'));
 //            return $string;
         } else {
@@ -699,7 +718,7 @@ class VtHelper
 
         $string = "";
         $possible = "012346789";
-        $length=sfConfig::get('app_lenght_reg_code',8);
+        $length = sfConfig::get('app_lenght_reg_code', 8);
         $maxlength = strlen($possible);
 
         if ($length > $maxlength) {
@@ -915,7 +934,7 @@ class VtHelper
         return $string;
     }
 
-    public static function getImagePath($source,$type='')
+    public static function getImagePath($source, $type = '')
     {
         if ($type != '') {
             $defaultImage = sfConfig::get('app_image_default_' . $type);
@@ -942,7 +961,7 @@ class VtHelper
         } else {
             $defaultImage = sfConfig::get('app_image_default');
         }
-        
+
         if ($width == null && $height == null)
             return (file_exists(sfConfig::get('sf_web_dir') . $source)) ? $source : $defaultImage;
         if (empty($source)) {
@@ -1001,16 +1020,17 @@ class VtHelper
         $thumbnail->save($fullThumbPath, 'image/jpeg');
         return (file_exists(sfConfig::get('sf_web_dir') . $dir . $thumbName)) ? $dir . $thumbName : $defaultImage;
     }
-    
+
     /**
-    * Tra ve dinh dang thoi gian: Thứ 4, 07/05/2014 14:22
-    * @author NamDT5
-    * @created on Jul 12, 2012
-    * @param unknown_type $string
-    * @param unknown_type $encoding
-    */
-   public static function getFormatDate($datetime){
-       $datearr = array(
+     * Tra ve dinh dang thoi gian: Thứ 4, 07/05/2014 14:22
+     * @author NamDT5
+     * @created on Jul 12, 2012
+     * @param unknown_type $string
+     * @param unknown_type $encoding
+     */
+    public static function getFormatDate($datetime)
+    {
+        $datearr = array(
             "Monday" => "Thứ hai",
             "Tuesday" => "Thứ ba",
             "Wednesday" => "Thứ tư",
@@ -1020,21 +1040,23 @@ class VtHelper
             "Sunday" => "Chủ nhật"
         );
         $date = date("l", strtotime($datetime));
-        return $datearr[$date].', ' .date(' d/m/Y', strtotime($datetime));
-   }
-
-    public static function reFormatDate($datetime, $format){
-        return (isset($datetime) & ($datetime != '0000-00-00 00:00:00'))? date($format, strtotime($datetime)) : '';
+        return $datearr[$date] . ', ' . date(' d/m/Y', strtotime($datetime));
     }
 
-   /**
+    public static function reFormatDate($datetime, $format)
+    {
+        return (isset($datetime) & ($datetime != '0000-00-00 00:00:00')) ? date($format, strtotime($datetime)) : '';
+    }
+
+    /**
      * preProcess query search backsplash (\) tat ca doan code search like trong PHP ma can tim ky tu dac biet deu phai goi ham nay
      * @author tuanbm
      * @modifier chuyennv2
      * @date 2012/06/27
      * @return string
      */
-    public static function preProcessForSearchLike($param) {
+    public static function preProcessForSearchLike($param)
+    {
         $param = addslashes($param);
         if (($param != '')) {
             $param = str_replace("%", "\\%", $param);
@@ -1042,29 +1064,33 @@ class VtHelper
         }
         return vtSecurity::decodeInput($param);
     }
+
     //get guild
-    public static function getGUID(){
-        if (function_exists('com_create_guid')){
+    public static function getGUID()
+    {
+        if (function_exists('com_create_guid')) {
             return com_create_guid();
-        }else{
-            mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
+        } else {
+            mt_srand((double)microtime() * 10000);//optional for php 4.2.0 and up.
             $charid = strtoupper(md5(uniqid(rand(), true)));
             $hyphen = chr(45);// "-"
-            $uuid = substr($charid, 0, 8).$hyphen
-                .substr($charid, 8, 4).$hyphen
-                .substr($charid,12, 4).$hyphen
-                .substr($charid,16, 4).$hyphen
-                .substr($charid,20,12);
+            $uuid = substr($charid, 0, 8) . $hyphen
+                . substr($charid, 8, 4) . $hyphen
+                . substr($charid, 12, 4) . $hyphen
+                . substr($charid, 16, 4) . $hyphen
+                . substr($charid, 20, 12);
             return $uuid;
         }
     }
-    public static function translateQuery($str, $trim = true) {
+
+    public static function translateQuery($str, $trim = true)
+    {
         if ($str == null || $str == '')
-          return $str;
+            return $str;
         $str = $trim ? trim($str) : $str;
         $str = addcslashes($str, "\\%_");
         return $str;
-      }
+    }
 
     //check format date
     public static function  validateDate($date, $format = 'Y-m-d')
@@ -1092,7 +1118,12 @@ class VtHelper
             mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
         ) . '.' . $ext;
     }
-    
+
+    public static function getPathImage($link, $prefix)
+    {
+        return sfConfig::get('app_url_media_file').'/' . $prefix . $link;
+    }
+
 }
 
 /**

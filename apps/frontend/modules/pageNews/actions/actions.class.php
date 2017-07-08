@@ -12,26 +12,49 @@ class pageNewsActions extends sfActions
 {
     public function executeIndex(sfWebRequest $request)
     {
+        $categorys = VtpCategoryTable::getAllCategoryFront();
+        if ($categorys) {
+            $this->categorys = $categorys;
+
+        } else {
+            return $this->redirect404();
+        }
+
+    }
+
+    public function executeCategoryNews(sfWebRequest $request)
+    {
         $slug = $request->getParameter('slug');
-        if($slug){
+        if ($slug) {
             $category = VtpCategoryTable::getCategoryBySlug($slug);
-            if($category){
+            if ($category) {
                 $this->catName = $category->getName();
-                $this->url_paging = 'category_news';
+                $this->url_paging = 'category_new';
                 $this->page = $this->getRequestParameter('page', 1);
-                $pager = new sfDoctrinePager('AdArticle', 10);
+                $pager = new sfDoctrinePager('AdArticle', 4);
                 $pager->setQuery(AdArticleTable::getListArticle($category->getId()));
                 $pager->setPage($this->page);
                 $pager->init();
                 $this->pager = $pager;
                 $this->listArticle = $pager->getResults();
-            }
-            else{
+            } else {
                 return $this->redirect404();
             }
 
+        } else {
+            return $this->redirect404();
         }
-        else{
+
+    }
+
+    public function executeNewDetail(sfWebRequest $request)
+    {
+        $slug = $request->getParameter('slug');
+        $article = AdArticleTable::getInstance()->createQuery()->andWhere('slug=?', $slug)->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->andWhere('is_active=?', 2)->fetchArray();
+        if (!empty($article)) {
+            $this->article = $article[0];
+        } else {
             return $this->redirect404();
         }
 

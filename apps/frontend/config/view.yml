@@ -14,8 +14,8 @@ default:
 
   stylesheets:
     - jquery-ui.css
-    - /font-awesome-4.2.0/css/font-awesome.min.css
-    - /lato/css/lato.min.css
+    - font-awesome-4.2.0/css/font-awesome.min.css
+    - lato/css/lato.min.css
     - swiper.css
     - jquery.mmenu.all.css
     - style.css

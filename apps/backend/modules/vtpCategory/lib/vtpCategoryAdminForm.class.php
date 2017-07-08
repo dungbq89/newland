@@ -85,11 +85,11 @@ class vtpCategoryAdminForm extends BaseVtpCategoryForm
         $this->widgetSchema['portal_id'] = new sfWidgetFormInputText(array(),array('disabled'=>'false'));
         $this->validatorSchema['portal_id'] = new sfValidatorString(array('max_length' => 25, 'required' => false,'trim'=>true));
 
-        $this->widgetSchema['meta'] = new sfWidgetFormTextarea();
-        $this->validatorSchema['meta'] = new sfValidatorString(array('required' => false, 'max_length' => 255));
+//        $this->widgetSchema['meta'] = new sfWidgetFormTextarea();
+//        $this->validatorSchema['meta'] = new sfValidatorString(array('required' => false, 'max_length' => 255));
 
-        $this->widgetSchema['keywords'] = new sfWidgetFormTextarea();
-        $this->validatorSchema['keywords'] = new sfValidatorString(array('required' => false, 'max_length' => 1000));
+//        $this->widgetSchema['keywords'] = new sfWidgetFormTextarea();
+//        $this->validatorSchema['keywords'] = new sfValidatorString(array('required' => false, 'max_length' => 1000));
 
         $this->validatorSchema->setPostValidator(new sfValidatorCallback(array('callback' => array($this, 'checkValidator'))));
     }
@@ -98,10 +98,10 @@ class vtpCategoryAdminForm extends BaseVtpCategoryForm
         //
         $i18n = sfContext::getInstance()->getI18N();
 
-        if (empty($values['permission'])){
-            $error1 = new sfValidatorError($validator,$i18n->__('Bạn phải chọn quyền cho chuyên mục.'));
-            throw new sfValidatorErrorSchema($validator, array('permission' => $error1));
-        }
+//        if (empty($values['permission'])){
+//            $error1 = new sfValidatorError($validator,$i18n->__('Bạn phải chọn quyền cho chuyên mục.'));
+//            throw new sfValidatorErrorSchema($validator, array('permission' => $error1));
+//        }
 
         return $values;
     }

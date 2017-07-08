@@ -27,6 +27,12 @@ product_all:
 news:
   url: /news
   param: {module: pageNews, action: index}
+category_new:
+  url: /news/:slug
+  param: {module: pageNews, action: categoryNews}
+news_detail:
+  url: /news-detail/:slug
+  param: {module: pageNews, action: newDetail}
 
 products:
   url: /chuyen-muc/:slug/:page
@@ -70,6 +76,16 @@ personnal:
   url: /danh-ba-hoi-vien
   param: {module: pagePersonal, action: index}
 
+#trang hiển thị chi tiết photos
+photo:
+  url: /photo
+  param: {module: pagePhoto, action: index}
+category_photo:
+  url: /photo/:slug
+  param: {module: pagePhoto, action: categoryPhoto}
+photo_detail:
+  url: /photo-detail/:slug
+  param: {module: pagePhoto, action: photoDetail}
 #ajax load video
 ajax_load_video:
   url: /load-video

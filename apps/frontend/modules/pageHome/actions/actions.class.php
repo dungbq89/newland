@@ -8,9 +8,12 @@
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class pageHomeActions extends sfActions {
+class pageHomeActions extends sfActions
+{
 
-    public function executeIndex(sfWebRequest $request) {
+    public function executeIndex(sfWebRequest $request)
+    {
+//        var_dump(sfContext::getInstance()->getUser()->getCulture());
         //seo trang chu
 //        $seoHomePage = VtSEO::getSeoHomepage();
 //        if($seoHomePage){

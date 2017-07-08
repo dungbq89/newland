@@ -88,8 +88,8 @@ class VtpCategoryTable extends Doctrine_Table
     {
         $query = VtpCategoryTable::getInstance()->createQuery()
             ->select('name, parent_id, level, priority')
-            ->where('type=?', $type)
-            ->andWhere('portal_id=?', $portalId)
+//            ->where('type=?', $type)
+//            ->andWhere('portal_id=?', $portalId)
             ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderby('priority asc');
         if ($listChild != '') {
@@ -220,7 +220,7 @@ class VtpCategoryTable extends Doctrine_Table
         //            ->andWhere('c.is_active=?', VtCommonEnum::NUMBER_ONE);
     }
 
-    public static function getCategoryBySlug($slug, $portalId=0)
+    public static function getCategoryBySlug($slug, $portalId = 0)
     {
         return self::getActiveCategoryQuery($portalId)
             ->select()
@@ -420,7 +420,7 @@ class VtpCategoryTable extends Doctrine_Table
             ->andWhere('is_show_cat=?', VtCommonEnum::NUMBER_ONE)
             ->whereIn('c.id', explode(',', $strListId));
     }
-    
+
     public function getListActiveCategoryQueryNewPt($parentId, $portal)
     {
         $strListId = VtpCategoryTable::getCategoryByParentPortal($parentId, $portal);
@@ -430,7 +430,6 @@ class VtpCategoryTable extends Doctrine_Table
             ->andWhere('is_show_cat=?', VtCommonEnum::NUMBER_ONE)
             ->whereIn('c.id', explode(',', $strListId));
     }
-
 
 
     public static function getCategoryByIdFront($id, $portalId)
@@ -457,11 +456,11 @@ class VtpCategoryTable extends Doctrine_Table
         return $strCat;
     }
 
-    
-    public static function getCategoryByParentPortal($category_id, $portal=0)
+
+    public static function getCategoryByParentPortal($category_id, $portal = 0)
     {
         $strCat = $category_id;
-        $lstCat = VtpCategoryTable::getCategoryByParentID(VtCommonEnum::ServiceCategory, $category_id,$portal);
+        $lstCat = VtpCategoryTable::getCategoryByParentID(VtCommonEnum::ServiceCategory, $category_id, $portal);
         if (count($lstCat) > 0) {
             foreach ($lstCat as $item) {
                 $strCat .= ',' . self::getCategoryByParent($item->id);
@@ -472,15 +471,35 @@ class VtpCategoryTable extends Doctrine_Table
         }
         return $strCat;
     }
-	
-	//Lay tat ca san pham theo chuyen muc hien thi trang danh sach
-    public static function getAllProductByCategory($catId) {
+
+    //Lay tat ca san pham theo chuyen muc hien thi trang danh sach
+    public static function getAllProductByCategory($catId)
+    {
         $listChildCat = VtpProductsCategoryTable::getStrCategoryByParent($catId);
-        $query =  VtpProductsTable::getInstance()->createQuery()
+        $query = VtpProductsTable::getInstance()->createQuery()
             ->whereIn('category_id', explode(',', $listChildCat))
             ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
 //            ->andWhere('is_home=?', VtCommonEnum::NUMBER_ONE)
             ->orderBy('updated_at DESC');
         return $query;
+    }
+
+    /**
+     * koala8920
+     * @param $type
+     * @return mixed
+     * @throws sfException
+     */
+    public static function getAllCategoryFront()
+    {
+        $query = VtpCategoryTable::getInstance()->createQuery()
+            ->where('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderby('priority asc');
+        $result = $query->fetchArray();
+        if (!empty($result)) {
+            return $result;
+        }
+        return false;
     }
 }
