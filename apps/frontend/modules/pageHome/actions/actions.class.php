@@ -39,4 +39,19 @@ class pageHomeActions extends sfActions
         $this->getResponse()->addMeta('dc.keywords', $seo_homepage['dc_keywords']);
         $this->getResponse()->addMeta('news_keywords', $seo_homepage['news_keywords']);
     }
+
+    public function executeGetProductByCatId(sfWebRequest $request){
+        $id = $request->getParameter('catid');
+        $strProduct = "<option selected='selected' value=''>Chọn loại phòng</option>";
+        if($id){
+            $products = VtpProductsTable::getProductByCatId($id, 50)->fetchArray();
+            if(count($products)>0){
+                $strProduct = "";
+                foreach($products as $value){
+                    $strProduct .= "<option value=".$value['id'].">".$value['product_name']."</option>";
+                }
+            }
+        }
+        return $this->renderText(json_encode($strProduct));
+    }
 }

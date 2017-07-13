@@ -55,10 +55,10 @@ class VtpProductsCategoryTable extends Doctrine_Table
     }
 
     // ngoctv: lay danhL sach categoey trang chu
-    public static function getListCategoryHome($portalId)
+    public static function getListCategoryHome()
     {
         $sql = VtpProductsCategoryTable::getInstance()->createQuery()
-            ->select('name, image_path, link, priority, description, slug')
+            ->select('id, name, image_path, link, priority, description, slug')
             ->andWhere('is_active=1')
             ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('priority asc');

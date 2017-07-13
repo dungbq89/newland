@@ -53,7 +53,7 @@ abstract class BaseVtpProductsCategoryForm extends BaseFormDoctrine
       'is_active'     => new sfValidatorBoolean(array('required' => false)),
       'is_home'       => new sfValidatorBoolean(array('required' => false)),
       'lang'          => new sfValidatorString(array('max_length' => 10, 'required' => false)),
-      'description'   => new sfValidatorString(array('max_length' => 512, 'required' => false)),
+      'description'   => new sfValidatorString(array('required' => false)),
       'slug'          => new sfValidatorString(array('max_length' => 255)),
       'portal_id'     => new sfValidatorInteger(array('required' => false)),
       'meta'          => new sfValidatorString(array('max_length' => 255, 'required' => false)),

@@ -21,7 +21,8 @@ body,html{
 }
 .header{
 	margin:0 auto;
-	background:#aea196;
+	/*background:#aea196;*/
+	background:#fff;
 }
 .header .logo{
 }

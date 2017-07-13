@@ -1,9 +1,9 @@
 <div class="header">
     <div class="grid">
         <div class="header-1-3" style="position:relative; min-height:10px;">
-            <div class="logo">
-                <a href="/"><img src="/images/logo/newlandhouse.png" alt="Newland Serviced Apartment"
-                                 style="max-width:100%"/></a>
+            <div class="logo" style="padding: 10px;">
+                <a href="/"><img src="../../images/nehob.jpg" alt="NEHOB CITY"
+                                 style="max-width:70%"/></a>
             </div>
         </div>
         <div class="header-2-3">
@@ -15,28 +15,20 @@
             <div class="hotline-banner hide-on-mobile hide-on-tab hide-on-pad">
                 <div class="col-1-3">
                     <div class="hotline-header">
-                        <a href="tel:0971.000.953">0971.000.953 <i class="fa fa-caret-down"></i></a>
+                        <a href="tel:0971.000.953">0934.559.019 <i class="fa fa-caret-down"></i></a>
 
                         <div class="box">
-                            <div> Newland 1: 043.5558818 - 0982.208.267</div>
-                            <div>Newland 6: 043.7834801 - 0988.438.530</div>
-                            <div> Newland 7: 043.5558456 - 0936.972.260</div>
-                            <div> Newland 8: 043.7831999 - 0978.158.154</div>
-                            <div> Newland 9: 043.7850808 - 0932.602.266</div>
+<!--                            <div> Newland 1: 043.5558818 - 0982.208.267</div>-->
                         </div>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="email-header">
-                        <a href="mailto:info@newlandhouse.vn">info@newlandhouse.vn <i
+                        <a href="mailto:info@newlandhouse.vn">info@nehobcity.com <i
                                     class="fa fa-caret-down"></i></a>
 
                         <div class="box">
-                            <div> Newland 1: nl1@newlandhouse.vn</div>
-                            <div> Newland 6: nl6@newlandhouse.vn</div>
-                            <div> Newland 7: nl7@newlandhouse.vn</div>
-                            <div> Newland 8: nl8@newlandhouse.vn</div>
-                            <div> Newland 9: nl9@newlandhouse.vn</div>
+<!--                            <div> Newland 1: nl1@newlandhouse.vn</div>-->
                         </div>
                     </div>
                 </div>
