@@ -4,17 +4,13 @@
 
 
         <div class="col-3-5  tab-col-1-1 mobile-col-1-1 fot-content ">
-            <div><b>Office : <em>Newland Trade &amp; Investment JSC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <div><b><?php echo __('Trụ sở') ?> : <em>Newland Trade &amp; Investment JSC &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp;
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</em><br/>
-                    Address: <em>No.47 Lane 148 Tran Duy Hung street,<br/>
-                        Cau Giay Disctrict, Hanoi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <?php echo __('Địa chỉ') ?>: <em>Số 43, ngõ 4, đường Đồng Me, Mễ Trì, Nam Từ Liêm, Hà Nội
                         &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</em><br/>
-                    Email: <em>info@newlandhouse.vn</em></b><br/>
-                <br/>
-                <br/>
-                <br/>
-                &nbsp;</div>
+                    Email: <em>info@nehobcity.com</em></b><br/>
+            </div>
         </div>
 
         <div class="col-1-5 tab-col-1-1 mobile-col-1-1">
