@@ -1,5 +1,8 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+get_product_by_catid:
+  url: /getProductByCatId
+  param: {module: pageHome, action: getProductByCatId}
 chain:
   url: /chain
   param: {module: pageChain, action: index}

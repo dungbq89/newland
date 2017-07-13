@@ -12,4 +12,8 @@ class pageHomeComponents extends sfComponents
     {
         $this->slide = AdAdvertiseTable::getAdvertiseV2('homepage');
     }
+    public function executeBooking(sfWebRequest $request)
+    {
+        $this->form = new FormBooking();
+    }
 }

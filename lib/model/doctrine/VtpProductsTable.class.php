@@ -125,6 +125,7 @@ class VtpProductsTable extends Doctrine_Table {
                         ->where('category_id=?', $catId)
                         ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
                         ->limit($limit)
+                        ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
                         ->orderBy('updated_at DESC');
         return $query;
     }
