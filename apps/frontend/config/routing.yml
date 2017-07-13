@@ -3,6 +3,15 @@
 chain:
   url: /chain
   param: {module: pageChain, action: index}
+chain_detail:
+  url: /chain/:slug
+  param: {module: pageChain, action: chainDetail}
+room_detail:
+  url: /room/:slug
+  param: {module: pageChain, action: roomDetail}
+room:
+  url: /room
+  param: {module: pageChain, action: room}
 #về chúng tôi
 about_us:
   url: /about-us

@@ -1121,8 +1121,12 @@ class VtHelper
 
     public static function getPathImage($link, $prefix)
     {
-        $defaultImage = sfConfig::get('app_image_default');
-        return (file_exists(sfConfig::get('app_upload_media_file') . '/' . $prefix . $link)) ? (sfConfig::get('app_url_media_file') . '/' . $prefix . $link) : $defaultImage;
+//        var_dump(sfConfig::get('app_url_media_file') . '/' . $prefix . $link);
+//        die;
+        $defaultImage = sfConfig::get('app_url_media_default_file');
+//        var_dump(file_exists(sfConfig::get('app_upload_media_file') . '/' . $prefix . $link));
+//        die;
+        return file_exists(sfConfig::get('app_upload_media_file') . '/' . $prefix . $link) ? (sfConfig::get('app_url_media_file') . '/' . $prefix . $link) : $defaultImage;
         return sfConfig::get('app_url_media_file') . '/' . $prefix . $link;
     }
 

@@ -10,88 +10,48 @@
  */
 class pageChainActions extends sfActions
 {
-
     public function executeIndex(sfWebRequest $request)
     {
-        $this->page = sfContext::getInstance()->getRouting()->getCurrentRouteName();
-        $max_row = 16;
-        $slug = $request->getParameter('slug');
-        $cateProduct = VtpProductsCategoryTable::getCategoryProductBySlug($slug);
-        if ($cateProduct) {
-            $seoCat = VtSEO::getSeoCategory($cateProduct);
-            if ($seoCat) {
-                $this->returnHtmlSeoPage($seoCat);
-            }
-            $this->catName = $cateProduct->getName();
+        try {
+            $max_row = 16;
             $this->page = $this->getRequestParameter('page', 1);
-            $pager = new sfDoctrinePager('VtpProducts', $max_row);
-            //$query = VtpProductsTable::getListProducts(VtCommonEnum::portalDefault, $slug);
-			$query = VtpProductsTable::getAllProductByCategory($cateProduct->getId());
+            $pager = new sfDoctrinePager('VtpProductsCategory', $max_row);
+            $query = VtpProductsCategoryTable::getListProductCategory();
             $pager->setQuery($query);
             $pager->setPage($this->page);
             $pager->init();
             $this->pager = $pager;
-            $this->url_paging = 'products';
-            $this->listProduct = $pager->getResults();
+            $this->url_paging = 'chain';
+            $this->listChain = $pager->getResults();
+        } catch (Exception $e) {
+            return $this->redirect404();
+        }
+    }
+
+    public function executeChainDetail(sfWebRequest $request)
+    {
+        $slug = $request->getParameter('slug');
+        $chain = VtpProductsCategoryTable::getCategoryProductBySlugV2($slug);
+        if ($chain) {
+            $this->chain = $chain;
+            // lay danh sach anh
+            $this->images = AdChainImageTable::getInstance()->getAllChainImage($chain['id']);
+            // lay danh sach dich vu
+            $this->listParam = ParameterCategoryTable::getInstance()->getListParamFront(explode(',', $chain['parameter_ids']));
+            // danh sach san pham
+            $this->listRoom = VtpProductsTable::getInstance()->getListProduct($chain['id']);
         } else {
             return $this->redirect404();
         }
     }
 
-    public function executeDetail(sfWebRequest $request)
+    public function executeRoom(sfWebRequest $request)
     {
-        $this->page = sfContext::getInstance()->getRouting()->getCurrentRouteName();
-        $slug = $this->slug = $request->getParameter('slug');
-        if ($slug) {
-            $product = VtpProductsTable::getProductbySlug($slug, VtCommonEnum::portalDefault);
-            if ($product) {
-                $seoCat = VtSEO::getSeoProductDetail($product);
-                if ($seoCat) {
-                    $this->returnHtmlSeoPage($seoCat);
-                }
-                $this->product = $product;
-                $productImages = VtpProductImageTable::getImagesByProductId($product->getId());
-                if ($productImages) {
-                    $this->productImages = $productImages;
-                }
-            } else {
-                return $this->redirect404();
-            }
-        } else {
-            return $this->redirect404();
-        }
+
     }
 
-    public function executeList(sfWebRequest $request)
+    public function executeRoomDetail(sfWebRequest $request)
     {
-        $this->page = sfContext::getInstance()->getRouting()->getCurrentRouteName();
-        $max_row = 20;
-        $this->catName = 'Sản Phẩm';
-        $this->page = $this->getRequestParameter('page', 1);
-        $pager = new sfDoctrinePager('VtpProducts', $max_row);
-        $query = VtpProductsTable::getListProducts(VtCommonEnum::portalDefault, '');
-        $pager->setQuery($query);
-        $pager->setPage($this->page);
-        $pager->init();
-        $this->pager = $pager;
-        $this->url_paging = 'product_all';
-        $this->listProduct = $pager->getResults();
-    }
 
-    //render meta tag
-    public function returnHtmlSeoPage($seoPage)
-    {
-        $this->getResponse()->setTitle($seoPage['title']);
-        $this->getResponse()->addMeta('description', $seoPage['description']);
-        $this->getResponse()->addMeta('keywords', $seoPage['keywords']);
-        $this->getResponse()->addMeta('og:url', $seoPage['og_url']);
-        $this->getResponse()->addMeta('og:description', $seoPage['og_description']);
-        $this->getResponse()->addMeta('og:image', $seoPage['og_image']);
-        $this->getResponse()->addMeta('og:title', $seoPage['og_title']);
-        $this->getResponse()->addMeta('og:site_name', $seoPage['og_site_name']);
-        $this->getResponse()->addMeta('dc.title', $seoPage['dc_title']);
-        $this->getResponse()->addMeta('dc.keywords', $seoPage['dc_keywords']);
-        $this->getResponse()->addMeta('news_keywords', $seoPage['news_keywords']);
     }
-
 }

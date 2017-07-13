@@ -1,121 +1,60 @@
-<div class="clearfix"></div>
-<?php include_component('moduleAdvertise', 'topOne'); ?>
-<div class="clearfix"></div>
+<div class="grid grid-pad">
+    <div class="c20"></div>
+    <div class="crumb hide-on-mobile">
+        <a href="/"> <?php echo __('Trang chủ') ?> </a> / <a href="javascript:void(0)"> <?php echo __('Căn hộ') ?></a>
+    </div>
+    <div class="c20"></div>
+    <h1 class="title-first-home">
+        <span><?php echo __('Căn hộ') ?></span>
+    </h1>
 
-
-<div class="content fll">
-    <?php include_component('common', 'support'); ?>
-    <div class="right_pico fr">
-
-
-        <div class="all">
-            <div class="top_product2">
-                <div id="it"><?php echo htmlspecialchars($catName); ?></div>
-            </div>
-
-            <div class="views_sp views_sp02">
-                <?php if (isset($listProduct)): ?>
-                    <ul class="list-item">
-                        <?php
-                        $count = 1;
-                        foreach ($listProduct as $product):
-                            $path = '/uploads/' . sfConfig::get('app_product_images') . $product['image_path'];
-                            $percent = 0;
-                            if ($product['price_promotion'] && $product['price_promotion'] != 0) {
-                                if ($product['price'] && $product['price'] != 0) {
-                                    $subPer = intval($product['price']) - intval($product['price_promotion']);
-                                    $percent = round(($subPer / $product['price']) * 100);
-                                }
-                            }
-                            ?>
-                            <li>
-                                <div class="bos_sp2">
-                                    <a href="<?php echo url_for2('product_detail', array('slug' => $product->getSlug())) ?>"
-                                       title="<?php echo htmlspecialchars($product->product_name) ?>">
-                                        <img src="<?php echo VtHelper::getThumbUrl($path, 150, 185, 'default') ?>"
-                                             alt="<?php echo htmlspecialchars($product->product_name) ?>"/>
-                                    </a>
-                                </div>
-
-                                <?php if ($percent > 0): ?>
-                                    <p class="type-discount">-<?php echo $percent; ?>%</p>
-                                <?php endif; ?>
-
-
-                                <span class="product-name"><a
-                                        href="<?php echo url_for2('product_detail', array('slug' => $product->getSlug())) ?>"
-                                        title="<?php echo htmlspecialchars($product->product_name) ?>"><?php echo htmlspecialchars($product->product_name) ?></a></span>
-
-                                <?php
-                                if ($product['price_promotion'] && $product['price_promotion'] != 0) {
-                                    if ($product['price'] && $product['price'] != 0) {
-                                        ?>
-                                        <span class="product-pricesave"><?php
-                                            if ($product['price']) {
-                                                echo number_format($product['price'], 0, ",", ".") . ' VNĐ';
-                                            } ?></span>
-
-                                        <span class="product-name2"><?php
-                                            echo number_format($product['price_promotion'], 0, ",", ".") . ' VNĐ';
-                                            ?>
-                                    </span>
-                                    <?php
-                                    } else {
-                                        ?>
-                                        <span class="product-name2"><?php
-                                            if ($product['price_promotion']) {
-                                                echo number_format($product['price_promotion'], 0, ",", ".") . ' VNĐ';
-                                            } else {
-                                                echo 'Liên hệ';
-                                            }
-                                            ?>
-                                    </span>
-                                    <?php
-                                    }
-                                } else {
-                                    ?>
-                                    <span class="product-name2"><?php
-                                        if ($product['price']) {
-                                            echo number_format($product['price'], 0, ",", ".") . ' VNĐ';
-                                        } else {
-                                            echo 'Liên hệ';
-                                        }
-                                        ?>
-                                    </span>
-                                <?php
-                                }
-                                ?>
-
-                                <span>
-                    </span>
-                                </p>
-                            </li>
-                        <?php
-                        if($count%4==0){
-                            ?>
-                            <div class="clearfix"></div>
-                            <?php
-                        }
-                        $count++;
-                        endforeach;
-                        ?>
-
-
-                    </ul>
-                <?php endif; ?>
-                <div class="clearfix"></div>
-            </div>
-            <?php
-            if ($pager->haveToPaginate()) {
-                include_component("common", "pagging", array('redirectUrl' => $url_paging, 'pager' => $pager, 'vtParams' => array('slug' => sfContext::getInstance()->getRequest()->getParameter('slug'))));
-            }
+    <div class="c20"></div>
+    <?php if (!empty($listChain) && isset($listChain) && count($listChain)) {
+        $dem = 1;
+        foreach ($listChain as $chain) {
             ?>
-        </div>
 
+            <div class="col-1-4 pad-col-1-3 tab-col-1-2 ">
+                <div class="">
+                    <div class="image-apart"
+                         data-image="<?php echo sfConfig::get('app_category_images', 'category_images') . $chain->image_path ?>">
+                        <a href="<?php echo url_for1('@chain_detail?slug=' . $chain->slug) ?>"><img
+                                src="<?php echo VtHelper::getPathImage($chain->image_path, sfConfig::get('app_category_images', 'category_images')) ?>"
+                                alt="<?php echo $chain->name ?>"
+                                width="100%"></a>
+                    </div>
+                    <h2 class="pro-name"><?php echo $chain->name ?></h2>
+
+                    <div class="chain-info">
+                        <div><a href="<?php echo url_for1('@chain_detail?slug=' . $chain->slug) ?>"><i
+                                    class="fa fa-map-marker"></i> <?php echo $chain->address ?></a></div>
+                        <div><a href="<?php echo url_for1('@chain_detail?slug=' . $chain->slug) ?>"><i
+                                    class="fa fa-picture-o"></i> Photos</a></div>
+                        <div><a href="<?php echo url_for1('@chain_detail?slug=' . $chain->slug) ?>l"><i
+                                    class="fa fa-map"></i> Map</a></div>
+                    </div>
+                </div>
+                <div class="c20 mobile-break"></div>
+
+            </div>
+            <?php if ($dem % 4 == 0) { ?>
+                <div class="c20 pc-break"></div>
+                <?php
+            }
+            $dem++;
+        }
+    } ?>
+    <div class="c"></div>
+    <div class="col-1-1">
+        <div class="paging">
+            <div class="pages fl">
+                <?php
+                if ($pager->haveToPaginate()) {
+                    include_component("common", "pagging", array('redirectUrl' => $url_paging, 'pager' => $pager, 'vtParams' => array('slug' => sfContext::getInstance()->getRequest()->getParameter('slug'))));
+                }
+                ?>
+            </div>
+        </div>
+        <div class="c20"></div>
     </div>
 </div>
-<style>
-    .slide {
-        margin-top: 3px !important;
-    }
-</style>

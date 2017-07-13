@@ -30,7 +30,7 @@ class VtpProductsCategoryTable extends Doctrine_Table
     public static function getListProductCategory()
     {
         $sql = VtpProductsCategoryTable::getInstance()->createQuery('a')
-            ->select('name, image_path, description, link')
+            ->select('name, image_path, description, link, address')
             ->andWhere('a.is_active=1')
             ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('a.priority asc');
@@ -192,5 +192,21 @@ class VtpProductsCategoryTable extends Doctrine_Table
                 self::getAllSubCategory($categories, $item['id'], $char . '-- ', $cat);
             }
         }
+    }
+
+
+    public static function getCategoryProductBySlugV2($slug)
+    {
+        $sql = VtpProductsCategoryTable::getInstance()->createQuery('a')
+            ->select('name, image_path, description, meta, keywords, address,lat,log,parameter_ids')
+            ->where('a.is_active=1')
+            ->andWhere('a.slug=?', $slug)
+            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderBy('a.priority asc');
+        $query = $sql->fetchArray();
+        if (!empty($query)) {
+            return $query[0];
+        }
+        return false;
     }
 }

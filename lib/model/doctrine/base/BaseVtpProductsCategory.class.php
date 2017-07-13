@@ -128,10 +128,9 @@ abstract class BaseVtpProductsCategory extends sfDoctrineRecord
              'comment' => 'Đa ngôn ngữ',
              'length' => 10,
              ));
-        $this->hasColumn('description', 'string', 512, array(
+        $this->hasColumn('description', 'string', null, array(
              'type' => 'string',
              'comment' => 'Mô tả về sản phẩm',
-             'length' => 512,
              ));
         $this->hasColumn('slug', 'string', 255, array(
              'type' => 'string',

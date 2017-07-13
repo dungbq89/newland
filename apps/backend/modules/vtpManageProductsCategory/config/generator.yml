@@ -19,9 +19,16 @@ generator:
         link: {label: Đường dẫn chi tiết}
         priority: {label: Thứ tự hiển thị}
         is_active: {label: Trạng thái}
+        is_home: {label: Trang chủ}
+        created_by: {label: Người tạo}
+        updated_by: {label: Người cập nhật}
+        created_at: {label: Ngày tạo}
+        updated_at: {label: Ngày cập nhật}
         description: {label: Giới thiệu}
         meta: {label: Nội dung thẻ Description}
         keywords: {label: Nội dung thẻ Keyword}
+        parent_id: {label: Chuyên mục cha}
+        show_banner: {label: Hiển thị banner}
         parameter_ids: {label: Dịch vụ}
         lat: {label: kinh độ}
         log: {label: Vĩ độ}
@@ -35,7 +42,7 @@ generator:
         display: [name]
       form:
         class: VtpProductsCategoryFormAdmin
-        display: [name, address, image_path, description,parameter_ids, lat, log, email, msisdn, meta, keywords, priority, is_active]
+        display: [name, address, image_path, description,parameter_ids, lat, log, email, msisdn, meta, keywords,link, priority, is_active, is_home, show_banner]
         fields:
           name: {label: Tên danh mục *}
           image_path: {label: Đường dẫn ảnh *}

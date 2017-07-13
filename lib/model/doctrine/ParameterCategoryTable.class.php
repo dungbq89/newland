@@ -35,4 +35,16 @@ class ParameterCategoryTable extends Doctrine_Table
         }
         return $list;
     }
+
+    public function getListParamFront($listParam)
+    {
+        $q = $this->createQuery()
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->andWhereIn('id', $listParam)
+            ->execute();
+        if ($q) {
+            return $q;
+        }
+        return false;
+    }
 }

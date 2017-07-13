@@ -24,11 +24,13 @@ all:
   video_images: video
   document: document
   member_images: member
-  upload_member: E:\app\project\dungbq3\newlandhouse.vn\newland\web\uploads
+  image_default: 'http://nehobcity.com/images/default.jpg'
+  upload_member: "E:/app/project/dungbq3/newlandhouse.vn/newland/web/uploads"
 
-  upload_media_file: E:\app\project\dungbq3\newlandhouse.vn\newland\web\uploads
+  upload_media_file: "E:/app/project/dungbq3/newlandhouse.vn/newland/web/uploads"
   url_media_file: http://localhost:5850/uploads
-  url_media_default_file: http://localhost:9327/images/default-image.jpg
+  url_media_default_file: http://localhost:5850/images/default-image.jpg
+  image_default: http://localhost:5850/images/default-image.jpg
   #upload_media_file: /uploads
 
   url_media_file: /uploads

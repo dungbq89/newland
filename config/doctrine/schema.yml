@@ -338,7 +338,7 @@ VtpProductsCategory:
     is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái 0=chưa sử dụng, 1= sử dụng"}
     is_home: { type: boolean, notnull: true, default: false, comment: "Trạng thái 0= Không hiện thị trang chu, 1= Hiện thị trang chủ"}
     lang: {  type: string(10), comment: "Đa ngôn ngữ"}
-    description: { type: string(512),  comment: "Mô tả về sản phẩm"}
+    description: { type: string,  comment: "Mô tả về sản phẩm"}
     slug: { type: string(255), unique: true, notnull: true, comment: "chuyển đổi url"}
     portal_id: { type: integer, comment: "Portal cần hiển thị nội dung, được quy ước trong file cấu hình (Khách hàng cá nhân / Khách hàng doanh nghiệp)"}
     meta: { type: string(255), comment: "Nội dung meta" }
@@ -531,3 +531,13 @@ AdChainImage:
     product: { type: integer(15), comment: "id product" }
     is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
     lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
+AdManageFile:
+  tableName: ad_manage_file
+  columns:
+    article_id:     {type: integer(8),  notnull: false, comment: 'id tin tuc'}
+    short_url:      {type: string(255), notnull: true, comment: 'media/2014/07/17/test.jpg'}
+    description:    {type: clob,        notnull: false}
+    type:           {type: integer(2),  notnull: true, default: 1, comment:  '1: image, 2: audio, 3 video'}
+    duration:       {type: integer(4),  notnull: false}
+    position:       {type: integer(4),  notnull: false, comment: 'vi tri anh, video' }
+    type_product:       {type: integer(4),  notnull: false, comment: 'anh phan he' }

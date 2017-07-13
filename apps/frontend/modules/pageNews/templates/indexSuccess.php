@@ -16,7 +16,7 @@
 
             <div class="col-1-4 pad-col-1-3 tab-col-1-2 ">
                 <div class="">
-                    <div class="image-apart">
+                    <div class="image-apart" data-image="<?php echo sfConfig::get('app_category_images', 'category_images').$category['image_path'] ?>">
                         <a href="<?php echo url_for1('@category_new?slug='.$category['slug']) ?>"><img
                                 src="<?php echo VtHelper::getPathImage($category['image_path'], sfConfig::get('app_category_images', 'category_images')) ?>"
                                 alt="<?php echo $category['name'] ?>"

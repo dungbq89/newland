@@ -12,13 +12,14 @@
 
     <div class="c20"></div>
     <?php if (!empty($listArticle) && isset($listArticle) && count($listArticle)) {
+
         $dem = 1;
         foreach ($listArticle as $article) {
             ?>
 
             <div class="col-1-4 pad-col-1-3 tab-col-1-2 ">
                 <div class="">
-                    <div class="image-apart">
+                    <div class="image-apart" data-img="<?php echo $article->image_path ?>">
                         <a href="<?php echo url_for1('@news_detail?slug=' . $article->slug) ?>"><img
                                 src="<?php echo VtHelper::getPathImage($article->image_path, sfConfig::get('app_article_images', 'article')) ?>"
                                 alt="<?php echo $article->title ?>"
