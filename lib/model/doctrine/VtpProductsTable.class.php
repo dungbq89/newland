@@ -97,7 +97,7 @@ class VtpProductsTable extends Doctrine_Table
     public static function getListProducts($portalId, $slug)
     {
         $query = VtpProductsTable::getInstance()->createQuery('p')
-            ->select('p.product_name, p.description, p.image_path, p.link, p.price, p.slug')
+            ->select('p.product_name, p.description, p.image_path, p.link, p.price, p.slug, p.price, p.price_promotion')
             ->innerJoin('p.VtpProducts cp')
             ->where('p.is_active=?', VtCommonEnum::NUMBER_ONE)
             ->andWhere('p.portal_id=?', $portalId)
@@ -188,6 +188,36 @@ class VtpProductsTable extends Doctrine_Table
             ->fetchArray();
         if (!empty($q)) {
             return $q;
+        }
+        return false;
+    }
+
+
+    public static function getProductbySlugV2($slug)
+    {
+        $q = VtpProductsTable::getInstance()->createQuery()
+            ->where('slug=?', $slug)
+            ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->fetchArray();
+        if (!empty($q)) {
+            return $q[0];
+        }
+        return false;
+    }
+
+
+    public static function getProductByCatIdV2($catId, $limit = 12)
+    {
+        $query = VtpProductsTable::getInstance()->createQuery()
+            ->where('category_id=?', $catId)
+            ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->limit($limit)
+            ->orderBy('updated_at DESC')
+            ->fetchArray();
+        if (!empty($query)) {
+            return $query;
         }
         return false;
     }

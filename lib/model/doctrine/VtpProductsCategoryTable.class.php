@@ -209,4 +209,16 @@ class VtpProductsCategoryTable extends Doctrine_Table
         }
         return false;
     }
+
+    public static function getCategoryByIdV2($id)
+    {
+        $query = VtpProductsCategoryTable::getInstance()->createQuery()
+            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->Where('id=?', $id)
+            ->fetchArray();
+        if (!empty($query)) {
+            return $query[0];
+        }
+        return false;
+    }
 }

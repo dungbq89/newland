@@ -52,6 +52,18 @@ class pageChainActions extends sfActions
 
     public function executeRoomDetail(sfWebRequest $request)
     {
-
+        $slug = $request->getParameter('slug');
+        $room = VtpProductsTable::getInstance()->getProductbySlugV2($slug);
+        if ($room) {
+            // dia chi
+            $this->chain = VtpProductsCategoryTable::getCategoryByIdV2($room['category_id']);
+            // danh sach anh
+            $this->listImage = VtpProductImageTable::getImagesByProductId($room['id']);
+            $this->room = $room;
+            // danh sach phong khac
+            $this->listOtherRoom = VtpProductsTable::getProductByCatIdV2($room['category_id']);
+        } else {
+            return $this->redirect404();
+        }
     }
 }
