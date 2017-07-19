@@ -60,9 +60,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdNews', 'doctrine');
  * @method AdNews    setSlug()            Sets the current record's "slug" value
  * @method AdNews    setCategoryId()      Sets the current record's "category_id" value
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseAdNews extends sfDoctrineRecord

@@ -18,9 +18,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdCategoryPermission', 'doctrine
  * @method AdCategoryPermission setPermissionId()       Sets the current record's "permission_id" value
  * @method AdCategoryPermission setCategoryPermission() Sets the current record's "CategoryPermission" collection
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseAdCategoryPermission extends sfDoctrineRecord

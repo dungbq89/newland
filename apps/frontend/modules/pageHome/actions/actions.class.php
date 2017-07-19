@@ -13,15 +13,14 @@ class pageHomeActions extends sfActions
 
     public function executeIndex(sfWebRequest $request)
     {
-//        var_dump(sfContext::getInstance()->getUser()->getCulture());
-        //seo trang chu
-//        $seoHomePage = VtSEO::getSeoHomepage();
-//        if($seoHomePage){
-//            $this->returnHtmlSeoPage($seoHomePage);
-//        }
-//        //Lấy danh sách sản phẩm theo chuyên mục
-//        $productCategory = VtpProductsCategoryTable::getProductCategoryHome('',4)->execute();
-//        $this->productCategory = $productCategory;
+        $seoHomePage = VtSEO::getSeoHomepage();
+        if($seoHomePage){
+            $this->returnHtmlSeoPage($seoHomePage);
+        }
+        //Lấy danh sách sản phẩm theo chuyên mục
+        $productCategory = VtpProductsCategoryTable::getProductCategoryHome('',4)->execute();
+        $this->productCategory = $productCategory;
+        $this->form = new FormBooking();
     }
 
     //render meta tag
@@ -53,5 +52,20 @@ class pageHomeActions extends sfActions
             }
         }
         return $this->renderText(json_encode($strProduct));
+    }
+
+    public function executeBookingRoom(sfWebRequest $request) {
+        $form = new FormBooking();
+        $form->bind($request->getParameter($form->getName()));
+        $data['error'] = false;
+        if ($form->isValid()) {
+            if ($form->save()) {
+                return $this->renderText(json_encode($data));
+            }
+        } else {
+            $data['error'] = true;
+            $data['html'] = $this->getPartial("pageHome/booking", array('form' => $form));
+        }
+        return $this->renderText(json_encode($data));
     }
 }

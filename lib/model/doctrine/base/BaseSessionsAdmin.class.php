@@ -21,9 +21,9 @@ Doctrine_Manager::getInstance()->bindComponent('SessionsAdmin', 'doctrine');
  * @method SessionsAdmin setSessTime()    Sets the current record's "sess_time" value
  * @method SessionsAdmin setSessUserid()  Sets the current record's "sess_userid" value
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseSessionsAdmin extends sfDoctrineRecord

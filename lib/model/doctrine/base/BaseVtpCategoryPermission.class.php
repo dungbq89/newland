@@ -15,9 +15,9 @@ Doctrine_Manager::getInstance()->bindComponent('VtpCategoryPermission', 'doctrin
  * @method VtpCategoryPermission setCategoryId()    Sets the current record's "category_id" value
  * @method VtpCategoryPermission setPermissionId()  Sets the current record's "permission_id" value
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseVtpCategoryPermission extends sfDoctrineRecord

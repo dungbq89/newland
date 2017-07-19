@@ -1,9 +1,21 @@
+<style>
+    .box-item-booking .item input, .box-item-booking .item select{
+        height: 30px;
+    }
+    #booking_captcha{
+        width: 50px !important;
+    }
+    #img_captcha{
+        width: 70px !important;
+        height: 30px;
+    }
+</style>
+
 <div style="max-width:1160px; margin:auto;">
     <div class="box-booking-slide">
-        <div style="text-transform:uppercase; color:#FFF">Booking</div>
+        <div style="text-transform:uppercase; color:#FFF"><?php echo __('Đặt phòng'); ?></div>
         <div class="c10"></div>
-        <form action="/index4.php?page=booking&lang=" method="post" id="bookingform"
-              onSubmit="return check_booking();">
+        <form action="<?php echo url_for('pageHome/bookingRoom') ?>" method="post" id="bookingform" name="booking">
             <?php echo $form->renderHiddenFields() ?>
             <input type="hidden" value="save" name="code"/>
 
@@ -68,6 +80,13 @@
                             echo '<span class="help-inline">' . $form['number_room']->renderError() . '</span>';
                         }?>
                     </div>
+<!--                    <div class="item-1-3 item">--><?php //echo __('Captcha') ?><!--</div>-->
+<!--                    <div class="item-2-3 item">-->
+<!--                        --><?php //echo $form['captcha']->render(array());
+//                        if ($form['captcha']->hasError()) {
+//                            echo '<span class="help-inline">' . $form['captcha']->renderError() . '</span>';
+//                        }?>
+<!--                    </div>-->
                     <div class="c"></div>
                 </div>
                 <div>
@@ -80,8 +99,9 @@
 </div>
 
 <script type="text/javascript">
-    $( document ).ready(function() {
+    $(document ).ready(function() {
         $("#booking_category_id").change(function() {
+            alert('4');
             var categoryId = $("#booking_category_id").val();
             var url = "<?php echo url_for('@get_product_by_catid'); ?>";
             $.ajax({

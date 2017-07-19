@@ -24,9 +24,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdLink', 'doctrine');
  * @method AdLink  setType()      Sets the current record's "type" value
  * @method AdLink  setIsActive()  Sets the current record's "is_active" value
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseAdLink extends sfDoctrineRecord

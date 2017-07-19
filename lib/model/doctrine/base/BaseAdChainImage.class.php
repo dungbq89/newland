@@ -27,9 +27,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdChainImage', 'doctrine');
  * @method AdChainImage setIsActive()  Sets the current record's "is_active" value
  * @method AdChainImage setLang()      Sets the current record's "lang" value
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseAdChainImage extends sfDoctrineRecord

@@ -30,9 +30,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdAdvertiseImage', 'doctrine');
  * @method AdAdvertiseImage setLink()             Sets the current record's "link" value
  * @method AdAdvertiseImage setAdAdvertiseImage() Sets the current record's "AdAdvertiseImage" value
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseAdAdvertiseImage extends sfDoctrineRecord

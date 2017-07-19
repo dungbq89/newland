@@ -50,6 +50,18 @@ class VtpProductsTable extends Doctrine_Table
         return VtpProductsTable::getInstance()->createQuery()
             ->select('product_name, description, image_path, link, slug, price, price_promotion')
             ->where('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->where('is_home=?', VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderBy('priority ASC')
+            ->limit($limit)
+            ->fetchArray();
+    }
+
+    public static function getHotProducts($limit)
+    {
+        return VtpProductsTable::getInstance()->createQuery()
+            ->select('product_name, description, image_path, link, slug, price, price_promotion')
+            ->where('is_active=?', VtCommonEnum::NUMBER_ONE)
             ->where('is_hot=?', VtCommonEnum::NUMBER_ONE)
             ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('priority ASC')
@@ -62,6 +74,7 @@ class VtpProductsTable extends Doctrine_Table
     {
         return VtpProductsTable::getInstance()->createQuery()
             ->select('id, product_name')
+            ->where('is_active=?', VtCommonEnum::NUMBER_ONE)
             ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->fetchArray();
     }

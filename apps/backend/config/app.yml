@@ -36,7 +36,7 @@ all:
               credentials: [[admin]]
               route: vtp_category
               icon: squares36.png
-            Quản lý chuyên mục sản phẩm:
+            Quản lý căn hộ:
               credentials: [[admin]]
               route: vtp_products_category
               icon: business133.png
@@ -44,7 +44,7 @@ all:
               credentials: [[admin]]
               route: vtp_menu
               icon: squares36.png
-            Quản lý sản phẩm:
+            Quản lý phòng:
               credentials: [[admin,subAdmin, ctv]]
               route: vtp_products
               icon: movie36.png

@@ -3,9 +3,9 @@
 /**
  * AdFeedBack filter form base class.
  *
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage filter
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
  */
 abstract class BaseAdFeedBackFormFilter extends BaseFormFilterDoctrine
@@ -19,8 +19,6 @@ abstract class BaseAdFeedBackFormFilter extends BaseFormFilterDoctrine
       'message'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'is_active'  => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'lang'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'created_by' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('CreatedBy'), 'add_empty' => true)),
-      'updated_by' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('UpdatedBy'), 'add_empty' => true)),
       'created_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
@@ -32,8 +30,6 @@ abstract class BaseAdFeedBackFormFilter extends BaseFormFilterDoctrine
       'message'    => new sfValidatorPass(array('required' => false)),
       'is_active'  => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'lang'       => new sfValidatorPass(array('required' => false)),
-      'created_by' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('CreatedBy'), 'column' => 'id')),
-      'updated_by' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('UpdatedBy'), 'column' => 'id')),
       'created_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
@@ -62,8 +58,6 @@ abstract class BaseAdFeedBackFormFilter extends BaseFormFilterDoctrine
       'message'    => 'Text',
       'is_active'  => 'Boolean',
       'lang'       => 'Text',
-      'created_by' => 'ForeignKey',
-      'updated_by' => 'ForeignKey',
       'created_at' => 'Date',
       'updated_at' => 'Date',
     );

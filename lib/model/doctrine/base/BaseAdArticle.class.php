@@ -75,9 +75,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdArticle', 'doctrine');
  * @method AdArticle           setArticlesRelated()   Sets the current record's "ArticlesRelated" collection
  * @method AdArticle           setRelatedArticles()   Sets the current record's "RelatedArticles" collection
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseAdArticle extends sfDoctrineRecord

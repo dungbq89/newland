@@ -51,9 +51,9 @@ Doctrine_Manager::getInstance()->bindComponent('VtpMenu', 'doctrine');
  * @method VtpMenu             setVtpParentMenu() Sets the current record's "VtpParentMenu" value
  * @method VtpMenu             setParentMenu()    Sets the current record's "ParentMenu" collection
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseVtpMenu extends sfDoctrineRecord

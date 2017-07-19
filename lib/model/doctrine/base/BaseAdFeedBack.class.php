@@ -27,9 +27,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdFeedBack', 'doctrine');
  * @method AdFeedBack setIsActive()  Sets the current record's "is_active" value
  * @method AdFeedBack setLang()      Sets the current record's "lang" value
  * 
- * @package    Web_Portals
+ * @package    symfony
  * @subpackage model
- * @author     ngoctv1
+ * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseAdFeedBack extends sfDoctrineRecord
@@ -78,9 +78,7 @@ abstract class BaseAdFeedBack extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $vtblameable0 = new Doctrine_Template_VtBlameable();
         $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($vtblameable0);
         $this->actAs($timestampable0);
     }
 }

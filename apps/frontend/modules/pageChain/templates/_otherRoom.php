@@ -35,8 +35,8 @@ if ($listOtherRoom) {
                 <div class="c10"></div>
                 <div class="price-book">
             	<span class="col-2-3">
-                    <div class="price"><span><?php echo $room['price'] ?> <?php echo __('Nghìn') ?></span>/<?php echo __('Tháng') ?></div>
-                    <div class="price"><span><?php echo $room['price_promotion'] ?> <?php echo __('Nghìn') ?></span>/<?php echo __('Ngày') ?></div>
+                    <div class="price"><span><?php echo $room['price'] ?> <?php echo __('VNĐ') ?></span>/<?php echo __('Tháng') ?></div>
+                    <div class="price"><span><?php echo $room['price_promotion'] ?> <?php echo __('VNĐ') ?></span>/<?php echo __('Ngày') ?></div>
 <!--                	<div class="price"><span>380 USD $</span>/Month</div>-->
 <!--                    <div class="price"><span>21 USD $</span>/Day</div>-->
                 </span>
