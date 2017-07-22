@@ -1,6 +1,6 @@
   
   <td class="sf_admin_text sf_admin_list_td_image_path" field="image_path">
-      <?php  echo '<img align="middle"  style="height: 100px; width: 100px" src="' . VtHelper::getUrlImagePathThumb(sfConfig::get('app_product_images'), $vtp_products->getImagePath()) . '"/>';?>
+      <?php  echo '<img align="middle"  style="height: 50px; width: 50px" src="' . VtHelper::getUrlImagePathThumb(sfConfig::get('app_product_images'), $vtp_products->getImagePath()) . '"/>';?>
   </td>
   <td class="sf_admin_text sf_admin_list_td_product_name" field="product_name" title="<?php echo  $vtp_products->getProductName()  ?>">
       <?php echo  link_to(VtHelper::truncate($vtp_products->getProductName(), 50, '...', true),'vtp_products_edit',$vtp_products)  ?>

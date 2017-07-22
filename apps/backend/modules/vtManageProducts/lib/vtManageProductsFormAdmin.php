@@ -98,7 +98,7 @@ class vtManageProductsFormAdmin extends BaseVtpProductsForm
         $this->validatorSchema['portal_id'] = new sfValidatorString(array('max_length' => 25, 'required' => false, 'trim' => true));
 
         $this->validatorSchema->setPostValidator(new sfValidatorAnd(array(
-            new sfValidatorDoctrineUnique(array('model' => 'VtpProducts', 'column' => array('product_name')), array('invalid' => $i18n->__('Tên sản phẩm này đã tồn tại')))
+            new sfValidatorDoctrineUnique(array('model' => 'VtpProducts', 'column' => array('product_name')), array('invalid' => $i18n->__('Tên phòng này đã tồn tại')))
         )));
         $this->widgetSchema->setNameFormat('vtp_products[%s]');
     }

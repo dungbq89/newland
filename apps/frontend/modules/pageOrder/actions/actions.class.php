@@ -42,6 +42,7 @@ class pageOrderActions extends sfActions {
                 $reg->setToTime($toTime);
                 $reg->setNumberPerson($values['number_person']);
                 $reg->setNumberRoom($values['number_room']);
+                $reg->setLang(sfContext::getInstance()->getUser()->getCulture());
                 $reg->save();
                 $this->getUser()->setFlash('success','Đặt phòng thành công, chúng tôi sẽ liên hệ vói bạn trong thời gian sớm nhất.');
                 $form = new orderForm();

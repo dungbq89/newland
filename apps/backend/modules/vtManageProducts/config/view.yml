@@ -2,10 +2,10 @@
 ---
 indexSuccess:
   metas:
-    title: Danh sách Sản phẩm
+    title: Danh sách phòng
 newSuccess:
   metas:
-    title: Thêm mới Sản phẩm
+    title: Thêm mới phòng
 editSuccess:
   metas:
-    title: Chỉnh sửa Sản phẩm
+    title: Chỉnh sửa phòng

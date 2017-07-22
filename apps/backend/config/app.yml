@@ -48,7 +48,6 @@ all:
               credentials: [[admin,subAdmin, ctv]]
               route: vtp_products
               icon: movie36.png
-
             Quản lý nội dung:
               credentials: [[admin,subAdmin]]
               route: ad_html
@@ -81,10 +80,14 @@ all:
               credentials: [[admin]]
               route: parameter_category
               icon: link71.png
-            Quản lý danh sách ảnh sản phẩm:
+            Quản lý danh sách ảnh của phòng:
               credentials: [[admin]]
               route: ad_chain_image
               icon: link71.png
+            Quản lý đơn hàng:
+              credentials: [[admin]]
+              route: booking
+              icon: text.png
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:

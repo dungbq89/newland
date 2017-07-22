@@ -9,7 +9,7 @@
         <?php endif; ?>
 
         <div class="span<?php echo $sidebar_status ? '10' : '12'; ?>">
-            <h1><?php echo __('Chỉnh sửa thông tin sản phẩm', array(), 'messages') ?></h1>
+            <h1><?php echo __('Chỉnh sửa thông tin phòng', array(), 'messages') ?></h1>
 
             <div id="sf_admin_header">
                 <?php include_partial('vtManageProducts/form_header', array('vtp_products' => $vtp_products, 'form' => $form, 'configuration' => $configuration)) ?>

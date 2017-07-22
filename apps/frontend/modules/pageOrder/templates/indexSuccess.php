@@ -51,6 +51,14 @@
             <input type="hidden" value="save" name="code">
             <div class="bookingform">
                 <div class="item">
+                    <div class="result-message">
+                        <?php if ($sf_user->hasFlash('success')): ?>
+                            <span><?php echo __($sf_user->getFlash('success'), null, 'tmcTwitterBootstrapPlugin') ?></span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="c5"></div>
+                <div class="item">
                     <?php echo $form['full_name']->render(array('placeholder' => __('Họ tên')));
                     if ($form['full_name']->hasError()) {
                         echo '<span class="help-inline">' . $form['full_name']->renderError() . '</span>';
