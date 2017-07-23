@@ -56,10 +56,10 @@
         <div style="line-height:25px">
             <div><strong><?php echo __('Loại phòng') ?>:</strong></div>
             <div class="price-detail">
-                <div><span><?php echo $room['price'] ?><?php echo __('Nghìn') ?></span>/<?php echo __('Tháng') ?></div>
                 <div>
-                    <span><?php echo $room['price_promotion'] ?><?php echo __('Nghìn') ?></span>/<?php echo __('Ngày') ?>
+                    <span><?php echo number_format($room['price_promotion'], 0, '', '.') ?>&nbsp;<?php echo __('vnđ') ?></span>/<?php echo __('ngày') ?>
                 </div>
+                <div><span><?php echo number_format($room['price'], 0, '', '.') ?>&nbsp;<?php echo __('vnđ') ?></span>/<?php echo __('tháng') ?></div>
             </div>
         </div>
         <div class="c10"></div>
@@ -67,7 +67,7 @@
         <div class="c20"></div>
         <div><span style="font-size:12px;"><em><?php echo $chain['address'] ?></em></span></div>
         <div class="c20"></div>
-        <a href="/booking/?idroom=116" class="quick-book"><?php echo __('Book') ?> <i class="fa fa-chevron-right"
+        <a href="<?php echo url_for1('@booking?id=' . $room['id']) ?>" class="quick-book"><?php echo __('Book') ?> <i class="fa fa-chevron-right"
                                                                                       aria-hidden="true"></i></a>
 
         <div class="c20"></div>

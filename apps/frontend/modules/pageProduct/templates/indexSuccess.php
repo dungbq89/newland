@@ -52,11 +52,11 @@
                                         ?>
                                         <span class="product-pricesave"><?php
                                             if ($product['price']) {
-                                                echo number_format($product['price'], 0, ",", ".") . ' VNĐ';
+                                                echo number_format($product['price'], 0, ",", ".") . ' vnđ';
                                             } ?></span>
 
                                         <span class="product-name2"><?php
-                                            echo number_format($product['price_promotion'], 0, ",", ".") . ' VNĐ';
+                                            echo number_format($product['price_promotion'], 0, ",", ".") . ' vnđ';
                                             ?>
                                     </span>
                                     <?php
@@ -64,7 +64,7 @@
                                         ?>
                                         <span class="product-name2"><?php
                                             if ($product['price_promotion']) {
-                                                echo number_format($product['price_promotion'], 0, ",", ".") . ' VNĐ';
+                                                echo number_format($product['price_promotion'], 0, ",", ".") . ' vnđ';
                                             } else {
                                                 echo 'Liên hệ';
                                             }
@@ -76,7 +76,7 @@
                                     ?>
                                     <span class="product-name2"><?php
                                         if ($product['price']) {
-                                            echo number_format($product['price'], 0, ",", ".") . ' VNĐ';
+                                            echo number_format($product['price'], 0, ",", ".") . ' vnđ';
                                         } else {
                                             echo 'Liên hệ';
                                         }

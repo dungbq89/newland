@@ -46,11 +46,11 @@
                                     ?>
                                     <span class="product-pricesave"><?php
                                         if ($products[$i]['price']) {
-                                            echo number_format($products[$i]['price'], 0, ",", ".") . ' VNĐ';
+                                            echo number_format($products[$i]['price'], 0, ",", ".") . ' vnđ';
                                         }?></span>
 
                                     <span class="product-name2"><?php
-                                        echo number_format($products[$i]['price_promotion'], 0, ",", ".") . ' VNĐ';
+                                        echo number_format($products[$i]['price_promotion'], 0, ",", ".") . ' vnđ';
                                         ?>
                                     </span>
                                 <?php
@@ -58,7 +58,7 @@
                                     ?>
                                     <span class="product-name2"><?php
                                         if ($products[$i]['price_promotion']) {
-                                            echo number_format($products[$i]['price_promotion'], 0, ",", ".") . ' VNĐ';
+                                            echo number_format($products[$i]['price_promotion'], 0, ",", ".") . ' vnđ';
                                         } else {
                                             echo 'Liên hệ';
                                         }
@@ -70,7 +70,7 @@
                                 ?>
                                 <span class="product-name2"><?php
                                     if ($products[$i]['price']) {
-                                        echo number_format($products[$i]['price'], 0, ",", ".") . ' VNĐ';
+                                        echo number_format($products[$i]['price'], 0, ",", ".") . ' vnđ';
                                     } else {
                                         echo 'Liên hệ';
                                     }

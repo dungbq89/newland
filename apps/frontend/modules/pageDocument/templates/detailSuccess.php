@@ -26,7 +26,7 @@
                 <td><?php echo htmlspecialchars($document->document_number); ?></td>
             </tr>
             <tr>
-                <td class="td-document-detail">Ngày ban hành</td>
+                <td class="td-document-detail">ngày ban hành</td>
                 <td><?php echo date('d/m/Y',strtotime($document->getDocumentDate())); ?></td>
             </tr>
             <tr>

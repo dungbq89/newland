@@ -25,7 +25,7 @@
                         </span>
                     </div>
                     <div class="frm-item">
-                        <span class="label">Ngày sinh (*)</span>
+                        <span class="label">ngày sinh (*)</span>
                         <span class="btn-in">
                              <?php echo $form['ngaysinh']->render(array('class'=>'in-txt'));
                              if ($form['ngaysinh']->hasError()) {

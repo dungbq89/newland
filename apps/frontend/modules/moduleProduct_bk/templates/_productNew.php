@@ -17,7 +17,7 @@
                 </div>
                 <div class="content">
                     <p><a class="product-name-new" href="<?php echo url_for('@product_detail?slug='.$product['slug']); ?>"><?php echo VtHelper::truncate(htmlspecialchars($product['product_name']),35);?></a></p>
-                    <p><?php if($product['price']) echo number_format(htmlspecialchars($product['price']),0,",",".").__(' VNĐ') ?></p>
+                    <p><?php if($product['price']) echo number_format(htmlspecialchars($product['price']),0,",",".").__(' vnđ') ?></p>
                 </div>
                 <div class="clear"></div>
             </div>

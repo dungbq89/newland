@@ -27,7 +27,7 @@
                             <h2 class="price-product">
                                 <?php
                                 if($products[$i]['price']){
-                                    echo number_format($products[$i]['price'],0,",",".").' VNĐ';
+                                    echo number_format($products[$i]['price'],0,",",".").' vnđ';
                                 }
                                 else{
                                     echo 'Liên hệ';

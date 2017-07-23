@@ -22,11 +22,12 @@
                 <div class="c10"></div>
                 <div class="price-book">
             	<span class="col-2-3">
-                	<div class="price"><span><?php echo $room['price'] ?> <?php echo __('Nghìn') ?></span>/<?php echo __('Tháng') ?></div>
-                    <div class="price"><span><?php echo $room['price_promotion'] ?> <?php echo __('Nghìn') ?></span>/<?php echo __('Ngày') ?></div>
+                    <div class="price"><?php echo number_format($room['price_promotion'], 0, '', '.') ?>&nbsp;<?php echo __('vnđ') ?></span>/<?php echo __('ngày') ?></div>
+                	<div class="price"><span><?php echo number_format($room['price'], 0, '', '.') ?>&nbsp;<?php echo __('vnđ') ?></span>/<?php echo __('tháng') ?></div>
+
                 </span>
                 <span class="col-1-3" style="padding:0px;">
-                	<a href="/booking/?idroom=106" class="quick-book"><?php echo __('Book') ?> <i class="fa fa-chevron-right"
+                	<a href="<?php echo url_for1('@booking?id=' . $room['id']) ?>" class="quick-book"><?php echo __('Book') ?> <i class="fa fa-chevron-right"
                                                                               aria-hidden="true"></i></a>
                 </span>
 

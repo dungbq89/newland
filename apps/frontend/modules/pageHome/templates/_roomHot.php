@@ -29,9 +29,9 @@
                     <div class="price-book">
             	<span class="col-2-3">
                 	<div class="price"><span><?php echo number_format($product['price'], 0, '', '.') ?>
-                            &nbsp;<?php echo __('VNĐ') ?></span>/<?php echo __('Tháng') ?></div>
+                            &nbsp;<?php echo __('vnđ') ?></span>/<?php echo __('tháng') ?></div>
                                         <div class="price"><span><?php echo number_format($product['price_promotion'], 0, '', '.') ?>
-                                                &nbsp;<?php echo __('VNĐ') ?></span>/<?php echo __('Ngày') ?></div>
+                                                &nbsp;<?php echo __('vnđ') ?></span>/<?php echo __('ngày') ?></div>
                 </span>
 
                         <div class="c10 mobile-break"></div>

@@ -62,11 +62,11 @@
                                 ?>
                                 <div class="giachinhhang">Giá bán: <span><?php
                                         if ($product->getPrice()) {
-                                            echo number_format($product->getPrice(), 0, ",", ".") . ' VNĐ';
+                                            echo number_format($product->getPrice(), 0, ",", ".") . ' vnđ';
                                         } ?></span></div>
 
                                 <div class="giaKM">Giá khuyến mại: <span itemprop="price"><?php
-                                        echo number_format($product->getPricePromotion(), 0, ",", ".") . ' VNĐ';
+                                        echo number_format($product->getPricePromotion(), 0, ",", ".") . ' vnđ';
                                         ?>
                                     </span></div>
                             <?php
@@ -74,7 +74,7 @@
                                 ?>
                                 <div class="giaKM">Giá khuyến mại: <span itemprop="price"><?php
                                         if ($product->getPricePromotion()) {
-                                            echo number_format($product->getPricePromotion(), 0, ",", ".") . ' VNĐ';
+                                            echo number_format($product->getPricePromotion(), 0, ",", ".") . ' vnđ';
                                         } else {
                                             echo 'Liên hệ';
                                         }
@@ -86,7 +86,7 @@
                             ?>
                             <div class="giachinhhang">Giá bán: <span><?php
                                     if ($product->getPrice()) {
-                                        echo number_format($product->getPrice(), 0, ",", ".") . ' VNĐ';
+                                        echo number_format($product->getPrice(), 0, ",", ".") . ' vnđ';
                                     } else {
                                         echo 'Liên hệ';
                                     }
