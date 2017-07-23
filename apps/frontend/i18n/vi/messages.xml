@@ -224,6 +224,10 @@
         <source>Gửi liên hệ</source>
         <target/>
       </trans-unit>
+      <trans-unit id="56">
+        <source>Tiếng Việt</source>
+        <target/>
+      </trans-unit>
     </body>
   </file>
 </xliff>

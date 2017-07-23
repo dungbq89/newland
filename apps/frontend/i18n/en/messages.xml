@@ -13,36 +13,36 @@
         <target/>
       </trans-unit>
       <trans-unit id="3">
-        <source>Office</source>
-        <target/>
+        <source>Trụ sở</source>
+        <target>Office</target>
       </trans-unit>
       <trans-unit id="4">
-        <source>Address</source>
-        <target/>
+        <source>Địa chỉ</source>
+        <target>Address</target>
       </trans-unit>
       <trans-unit id="5">
         <source>Trang chủ</source>
-        <target/>
+        <target>Home</target>
       </trans-unit>
       <trans-unit id="6">
         <source>Về chúng tôi</source>
-        <target/>
+        <target>About us</target>
       </trans-unit>
       <trans-unit id="7">
         <source>Căn hộ</source>
-        <target/>
+        <target>Chain</target>
       </trans-unit>
       <trans-unit id="8">
         <source>Dịch vụ</source>
-        <target/>
+        <target>Service</target>
       </trans-unit>
       <trans-unit id="9">
         <source>Bộ sưu tập</source>
-        <target/>
+        <target>Photos</target>
       </trans-unit>
       <trans-unit id="10">
         <source>Tin tức</source>
-        <target/>
+        <target>News</target>
       </trans-unit>
       <trans-unit id="11">
         <source>Liên kết website</source>
@@ -50,11 +50,11 @@
       </trans-unit>
       <trans-unit id="12">
         <source>Xem chi tiết</source>
-        <target/>
+        <target>View detail</target>
       </trans-unit>
       <trans-unit id="13">
         <source>Chi tiết</source>
-        <target/>
+        <target>Detail</target>
       </trans-unit>
       <trans-unit id="14">
         <source>Mua hàng</source>
@@ -74,7 +74,7 @@
       </trans-unit>
       <trans-unit id="18">
         <source> vnđ</source>
-        <target/>
+        <target>usd $</target>
       </trans-unit>
       <trans-unit id="19">
         <source>Tính năng thường dùng</source>
@@ -86,27 +86,27 @@
       </trans-unit>
       <trans-unit id="21">
         <source>Phòng</source>
-        <target/>
+        <target>Room</target>
       </trans-unit>
       <trans-unit id="22">
         <source>Tất cả phòng</source>
-        <target/>
+        <target>All room</target>
       </trans-unit>
       <trans-unit id="23">
         <source>Phòng khác</source>
-        <target/>
+        <target>Other room</target>
       </trans-unit>
       <trans-unit id="24">
         <source>vnđ</source>
-        <target/>
+        <target>usd $</target>
       </trans-unit>
       <trans-unit id="25">
         <source>ngày</source>
-        <target/>
+        <target>day</target>
       </trans-unit>
       <trans-unit id="26">
         <source>tháng</source>
-        <target/>
+        <target>month</target>
       </trans-unit>
       <trans-unit id="27">
         <source>Book</source>
@@ -114,11 +114,11 @@
       </trans-unit>
       <trans-unit id="28">
         <source>Loại phòng</source>
-        <target/>
+        <target>Room type</target>
       </trans-unit>
       <trans-unit id="29">
         <source>Danh sách phòng</source>
-        <target/>
+        <target>List room</target>
       </trans-unit>
       <trans-unit id="30">
         <source>Chi tiết văn bản</source>
@@ -126,35 +126,35 @@
       </trans-unit>
       <trans-unit id="31">
         <source>Từ ngày</source>
-        <target/>
+        <target>From date</target>
       </trans-unit>
       <trans-unit id="32">
         <source>Mã bảo mật không chính xác.</source>
-        <target/>
+        <target>Captcha invalid</target>
       </trans-unit>
       <trans-unit id="33">
         <source>Yêu cầu mã bảo mật.</source>
-        <target/>
+        <target>Captcha require</target>
       </trans-unit>
       <trans-unit id="34">
         <source>Chọn tòa nhà</source>
-        <target/>
+        <target>Choice chain</target>
       </trans-unit>
       <trans-unit id="35">
         <source>Chọn loại phòng</source>
-        <target/>
+        <target>Choice room</target>
       </trans-unit>
       <trans-unit id="36">
         <source>Đặt phòng</source>
-        <target/>
+        <target>Booking</target>
       </trans-unit>
       <trans-unit id="37">
         <source>Họ tên</source>
-        <target/>
+        <target>Full name</target>
       </trans-unit>
       <trans-unit id="38">
         <source>Số điện thoại</source>
-        <target/>
+        <target>Phone</target>
       </trans-unit>
       <trans-unit id="39">
         <source>Email</source>
@@ -162,23 +162,23 @@
       </trans-unit>
       <trans-unit id="40">
         <source>Số lượng người</source>
-        <target/>
+        <target>Number of Person</target>
       </trans-unit>
       <trans-unit id="41">
         <source>Số lượng phòng</source>
-        <target/>
+        <target>Number of room</target>
       </trans-unit>
       <trans-unit id="42">
         <source>Phòng nổi bật</source>
-        <target/>
+        <target>Feature Rooms</target>
       </trans-unit>
       <trans-unit id="43">
         <source>Phòng được thuê nhiều</source>
-        <target/>
+        <target>Most viewed Rooms</target>
       </trans-unit>
       <trans-unit id="44">
         <source>Nội dung</source>
-        <target/>
+        <target>Content</target>
       </trans-unit>
       <trans-unit id="45">
         <source>Captcha</source>
@@ -198,32 +198,36 @@
       </trans-unit>
       <trans-unit id="49">
         <source>Tìm kiếm</source>
-        <target/>
+        <target>Search</target>
       </trans-unit>
       <trans-unit id="50">
         <source>Liên hệ</source>
-        <target/>
+        <target>Contact</target>
       </trans-unit>
       <trans-unit id="51">
         <source>Gửi liên hệ thành công.</source>
-        <target/>
+        <target>Send message succeed</target>
       </trans-unit>
       <trans-unit id="52">
         <source>Gửi phản hồi của bạn</source>
-        <target/>
+        <target>Send a message</target>
       </trans-unit>
       <trans-unit id="53">
         <source>Tiêu đề</source>
-        <target/>
+        <target>Title</target>
       </trans-unit>
       <trans-unit id="54">
         <source>Mã bảo mật</source>
-        <target/>
+        <target>Captcha</target>
       </trans-unit>
       <trans-unit id="55">
         <source>Gửi liên hệ</source>
-        <target/>
+        <target>Send</target>
       </trans-unit>
+    <trans-unit id="56">
+        <source>Tiếng Việt</source>
+        <target>Vietnamese</target>
+    </trans-unit>
     </body>
   </file>
 </xliff>
