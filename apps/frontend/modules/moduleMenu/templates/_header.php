@@ -57,7 +57,7 @@
                                 echo '<ul class="mnu-one-col">';
                                 foreach ($listAlbum as $album){
                                     ?>
-                                    <li><a href="/photo-newland-1/"><?php echo $album['name']; ?></a></li>
+                                    <li><a href="<?php echo url_for1('@category_photo?slug='.$album['slug']) ?>"><?php echo $album['name']; ?></a></li>
                                     <?php
                                 }
                                 echo '</ul>';
