@@ -35,5 +35,7 @@ generator:
       form:
         display: [full_name, phone, email, category_id, product_id, from_time, to_time, number_person, number_room, is_check]
         class: BookingAdminForm
-      edit:    ~
-      new:     ~
+      edit:
+        title: Chỉnh sửa đơn hàng
+      new:
+        title: Thêm mới đơn hàng

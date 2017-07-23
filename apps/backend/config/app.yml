@@ -88,6 +88,10 @@ all:
               credentials: [[admin]]
               route: booking
               icon: text.png
+            Quản lý feedback:
+              credentials: [[admin]]
+              route: ad_feed_back
+              icon: link71.png
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:

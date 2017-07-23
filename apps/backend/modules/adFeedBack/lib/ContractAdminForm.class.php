@@ -1,11 +1,14 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: Ta Van Ngoc
- * Date: 6/13/15
- * Time: 11:18 PM
+ * vtpCategory form.
+ *
+ * @package    vtp
+ * @subpackage form
+ * @author     LamNQ
+ * @version    2
  */
-class contactForm extends BaseAdFeedBackForm
+class ContractAdminForm extends BaseAdFeedBackForm
 {
     public function configure()
     {
@@ -17,6 +20,7 @@ class contactForm extends BaseAdFeedBackForm
             'phone' => new sfWidgetFormInputText(),
             'email'        => new sfWidgetFormInputText(),
             'message'  => new sfWidgetFormTextarea(),
+            'is_active'     => new sfWidgetFormInputCheckbox(),
         ));
 
         $this->setValidators(array(
@@ -25,26 +29,12 @@ class contactForm extends BaseAdFeedBackForm
             'phone' => new sfValidatorString(array('max_length' => 25, 'required' => false)),
             'email'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
             'message'  => new sfValidatorString(array('max_length' => 2000, 'required' => true)),
+            'is_active'     => new sfValidatorBoolean(array('required' => false)),
         ));
-        $this->widgetSchema['captcha'] = new sfFrontWidgetCaptchaGD(array(), array());
-        $this->validatorSchema['captcha'] = new sfCaptchaGDValidator(array('required' => true), array(
-            'invalid' => $i18n->__('Mã bảo mật không chính xác.'),
-            'required' => $i18n->__('Yêu cầu mã bảo mật.'),
-        ));
-        $this->widgetSchema->setNameFormat('ad_comment[%s]');
+
+        $this->widgetSchema->setNameFormat('ad_feedback[%s]');
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
-    }
-
-    private function doBindType(&$values)
-    {
-        $values['lang'] = sfContext::getInstance()->getUser()->getCulture();
-    }
-
-    protected function doBind(array $values)
-    {
-        $this->doBindType($values);
-        parent::doBind($values);
     }
 }

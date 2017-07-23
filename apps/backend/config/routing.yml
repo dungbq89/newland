@@ -1,3 +1,12 @@
+ad_feed_back:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdFeedBack
+    module:               adFeedBack
+    prefix_path:          /adFeedBack
+    column:               id
+    with_wildcard_routes: true
+
 booking:
   class: sfDoctrineRouteCollection
   options:
