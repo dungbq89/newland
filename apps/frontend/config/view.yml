@@ -21,6 +21,7 @@ default:
     - style.css
     - a.css
     - grid.css
+    - flexslider.css
   javascripts:
     - jquery-1.10.1.min.js
     - jquery.form.min.js
@@ -28,6 +29,7 @@ default:
     - jquery.mmenu.min.all.js
     - script.js
     - swiper.js
+    - jquery.flexslider.js
 #    - library.js
 
   has_layout:     true
