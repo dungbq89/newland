@@ -1,35 +1,28 @@
 <div class="grid grid-pad">
     <div class="c20"></div>
     <div class="crumb hide-on-mobile">
-        <a href="/"> <?php echo __('Trang chủ') ?> </a> / <a href="javascript:void(0)"> <?php echo __('Tin tức') ?></a>
+        <a href="/"> <?php echo __('Trang chủ') ?> </a> / <a href="javascript:void(0)"> <?php echo __('Hình ảnh') ?></a>
     </div>
     <div class="c20"></div>
     <h1 class="title-first-home">
-        <span><?php echo __('Tin tức') ?></span>
+        <span><?php echo __('Hình ảnh') ?></span>
     </h1>
 
     <div class="c20"></div>
-    <?php if (!empty($categorys)) {
+    <?php if (!empty($albumPhoto)) {
         $dem = 1;
-        foreach ($categorys as $category) {
+        foreach ($albumPhoto as $photo) {
             ?>
 
             <div class="col-1-4 pad-col-1-3 tab-col-1-2 ">
                 <div class="">
                     <div class="image-apart">
-                        <a href="<?php echo url_for1('@category_new?slug='.$category['slug']) ?>"><img
-                                src="<?php echo VtHelper::getPathImage($category['image_path'], sfConfig::get('app_category_images', 'category_images')) ?>"
-                                alt="<?php echo $category['name'] ?>"
+                        <a href="<?php echo url_for1('@category_photo?slug='.$photo['slug']) ?>"><img
+                                src="<?php echo VtHelper::getUrlImagePathThumb(sfConfig::get('app_album_images'),$photo['image_path']) ?>"
+                                alt="<?php echo $photo['name'] ?>"
                                 width="100%"></a>
                     </div>
-                    <h2 class="pro-name"><?php echo $category['name'] ?></h2>
-
-                    <!--                    <div class="chain-info">-->
-                    <!--                        <div><a href="/chain/newland-1.html">-->
-                    <!--                                --><?php //echo $category['name'] ?>
-                    <!--                            </a></div>-->
-                    <!---->
-                    <!--                    </div>-->
+                    <h2 class="pro-name"><?php echo $photo['name'] ?></h2>
                 </div>
                 <div class="c20 mobile-break"></div>
 

@@ -12,9 +12,9 @@ class pagePhotoActions extends sfActions
 {
     public function executeIndex(sfWebRequest $request)
     {
-        $categorys = VtpCategoryTable::getAllCategoryFront();
-        if ($categorys) {
-            $this->categorys = $categorys;
+        $albumPhoto = AdAlbumTable::getAllAlbumPhoto();
+        if ($albumPhoto) {
+            $this->albumPhoto = $albumPhoto;
 
         } else {
             return $this->redirect404();
@@ -25,22 +25,14 @@ class pagePhotoActions extends sfActions
     public function executeCategoryPhoto(sfWebRequest $request)
     {
         $slug = $request->getParameter('slug');
-        if ($slug) {
-            $category = VtpCategoryTable::getCategoryBySlug($slug);
-            if ($category) {
-                $this->catName = $category->getName();
-                $this->url_paging = 'category_photo';
-                $this->page = $this->getRequestParameter('page', 1);
-                $pager = new sfDoctrinePager('AdArticle', 4);
-                $pager->setQuery(AdArticleTable::getListArticle($category->getId()));
-                $pager->setPage($this->page);
-                $pager->init();
-                $this->pager = $pager;
-                $this->listArticle = $pager->getResults();
-            } else {
-                return $this->redirect404();
-            }
-
+        $albumPhoto = AdAlbumTable::getALbumBySlugV2($slug);
+        if ($albumPhoto) {
+            // danh sach photo
+            $listPhoto = AdPhotoTable::getPhotoByAlbumId($albumPhoto['id'])
+//                ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+                ->orderBy('priority DESC')->fetchArray();
+            $this->albumPhoto = $albumPhoto;
+            $this->listPhoto = $listPhoto;
         } else {
             return $this->redirect404();
         }

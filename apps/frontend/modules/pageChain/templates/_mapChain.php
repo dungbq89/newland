@@ -51,7 +51,7 @@
         </div>
         <div id="location" class="tabcontentdetail" style="display:block">
             <div style="border:solid 1px #CCC; height:400px" id="map"></div>
-            <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+            <script src="http://maps.googleapis.com/maps/api/js?sensor=false&key=&key=AIzaSyCuSwKlh2beWJwv4YLfAE0YQYwua0LMF3c"></script>
             <script>
                 var infowindow = new google.maps.InfoWindow({size: new google.maps.Size(150, 50)});
                 var map;

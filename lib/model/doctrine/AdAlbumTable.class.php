@@ -75,4 +75,28 @@ class AdAlbumTable extends Doctrine_Table
             ->orderBy('updated_at DESC');
         return $q;
     }
+
+    public static function getAllAlbumPhoto()
+    {
+        $q = AdAlbumTable::getInstance()->createQuery()
+            ->where('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderBy('priority DESC')->fetchArray();
+        if (!empty($q))
+            return $q;
+        return false;
+    }
+
+
+    public static function getALbumBySlugV2($slug)
+    {
+        $q = AdAlbumTable::getInstance()->createQuery()
+            ->where('slug=?', $slug)
+            ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->fetchArray();
+        if (!empty($q))
+            return $q[0];
+        return false;
+    }
 }

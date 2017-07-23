@@ -51,7 +51,7 @@
                         <a href="<?php echo url_for2('services'); ?>"><?php echo __('Dịch vụ') ?></a>
                     </li>
                     <li class="">
-                        <a href="/photos/"><?php echo __('Bộ sưu tập') ?></a>
+                        <a href="<?php echo url_for1('@photo') ?>"><?php echo __('Bộ sưu tập') ?></a>
                         <?php
                             if(isset($listAlbum) && count($listAlbum)){
                                 echo '<ul class="mnu-one-col">';
