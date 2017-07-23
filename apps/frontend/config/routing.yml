@@ -1,5 +1,8 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+contact_us:
+  url: /contact-us
+  param: {module: pageContact, action: index}
 booking:
   url: /booking/:id
   param: {module: pageOrder, action: index}

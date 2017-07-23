@@ -10,6 +10,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdFeedBack', 'doctrine');
  * @property string $name
  * @property string $email
  * @property string $title
+ * @property string $phone
  * @property string $message
  * @property boolean $is_active
  * @property string $lang
@@ -17,12 +18,14 @@ Doctrine_Manager::getInstance()->bindComponent('AdFeedBack', 'doctrine');
  * @method string     getName()      Returns the current record's "name" value
  * @method string     getEmail()     Returns the current record's "email" value
  * @method string     getTitle()     Returns the current record's "title" value
+ * @method string     getPhone()     Returns the current record's "phone" value
  * @method string     getMessage()   Returns the current record's "message" value
  * @method boolean    getIsActive()  Returns the current record's "is_active" value
  * @method string     getLang()      Returns the current record's "lang" value
  * @method AdFeedBack setName()      Sets the current record's "name" value
  * @method AdFeedBack setEmail()     Sets the current record's "email" value
  * @method AdFeedBack setTitle()     Sets the current record's "title" value
+ * @method AdFeedBack setPhone()     Sets the current record's "phone" value
  * @method AdFeedBack setMessage()   Sets the current record's "message" value
  * @method AdFeedBack setIsActive()  Sets the current record's "is_active" value
  * @method AdFeedBack setLang()      Sets the current record's "lang" value
@@ -53,6 +56,12 @@ abstract class BaseAdFeedBack extends sfDoctrineRecord
              'type' => 'string',
              'notnull' => true,
              'comment' => 'tieu de',
+             'length' => 255,
+             ));
+        $this->hasColumn('phone', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => true,
+             'comment' => 'sdt',
              'length' => 255,
              ));
         $this->hasColumn('message', 'string', 255, array(

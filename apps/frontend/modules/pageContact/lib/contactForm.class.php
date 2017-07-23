@@ -5,27 +5,32 @@
  * Date: 6/13/15
  * Time: 11:18 PM
  */
-class contactForm extends BaseAdCommentForm
+class contactForm extends BaseAdFeedBackForm
 {
     public function configure()
     {
-        unset($this['create_date']);
+        $i18n = sfContext::getInstance()->getI18N();
+        unset($this['created_at'], $this['updated_at']);
         $this->setWidgets(array(
-            'title'        => new sfWidgetFormInputText(),
-            'full_name'    => new sfWidgetFormInputText(),
-            'phone_number' => new sfWidgetFormInputText(),
+            'name'        => new sfWidgetFormInputText(),
+            'title'    => new sfWidgetFormInputText(),
+            'phone' => new sfWidgetFormInputText(),
             'email'        => new sfWidgetFormInputText(),
-            'description'  => new sfWidgetFormTextarea(),
+            'message'  => new sfWidgetFormTextarea(),
         ));
 
         $this->setValidators(array(
             'title'        => new sfValidatorString(array('max_length' => 255)),
-            'full_name'    => new sfValidatorString(array('max_length' => 255)),
-            'phone_number' => new sfValidatorString(array('max_length' => 25, 'required' => false)),
+            'name'    => new sfValidatorString(array('max_length' => 255)),
+            'phone' => new sfValidatorString(array('max_length' => 25, 'required' => false)),
             'email'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-            'description'  => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+            'message'  => new sfValidatorString(array('max_length' => 2000, 'required' => true)),
         ));
-
+        $this->widgetSchema['captcha'] = new sfFrontWidgetCaptchaGD(array(), array());
+        $this->validatorSchema['captcha'] = new sfCaptchaGDValidator(array('required' => true), array(
+            'invalid' => $i18n->__('Mã bảo mật không chính xác.'),
+            'required' => $i18n->__('Yêu cầu mã bảo mật.'),
+        ));
         $this->widgetSchema->setNameFormat('ad_comment[%s]');
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

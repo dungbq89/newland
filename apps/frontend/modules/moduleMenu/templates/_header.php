@@ -67,6 +67,9 @@
                     <li class="">
                         <a href="<?php echo url_for2('news'); ?>"><?php echo __('Tin tức') ?></a>
                     </li>
+                    <li class="">
+                        <a href="<?php echo url_for2('contact_us'); ?>"><?php echo __('Liên hệ') ?></a>
+                    </li>
 
                 </ul>
                 <ul class="nav hide-on-pc " id="navmobile">
