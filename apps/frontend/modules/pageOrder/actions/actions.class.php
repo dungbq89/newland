@@ -50,4 +50,5 @@ class pageOrderActions extends sfActions {
         }
         $this->form=$form;
     }
+
 }

@@ -492,6 +492,7 @@ AdFeedBack:
     name: { type: string(255), notnull: true,  comment: "Tên"}
     email: { type: string(255), notnull: true,  comment: "email"}
     title: { type: string(255), notnull: true,  comment: "tieu de"}
+    phone: { type: string(255), notnull: true,  comment: "sdt"}
     message: { type: string(255), notnull: true,  comment: "tin nhan"}
     is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
     lang: {  type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
