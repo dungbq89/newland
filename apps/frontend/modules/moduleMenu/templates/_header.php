@@ -32,9 +32,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-1-3">
-                    <div class="feedback-header"><a href="/feedback/">Feedback</a></div>
-                </div>
+<!--                <div class="col-1-3">-->
+<!--                    <div class="feedback-header"><a href="/feedback/">Feedback</a></div>-->
+<!--                </div>-->
             </div>
             <div class="menubar" id="menubar">
                 <ul class="nav hide-on-pad hide-on-tab hide-on-mobile" id="navbar">
