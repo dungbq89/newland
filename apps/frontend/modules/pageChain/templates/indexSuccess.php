@@ -12,14 +12,15 @@
     <?php if (!empty($listChain) && isset($listChain) && count($listChain)) {
         $dem = 1;
         foreach ($listChain as $chain) {
+            $path = '/uploads/' . sfConfig::get('app_category_images') . $chain->image_path;
             ?>
 
             <div class="col-1-4 pad-col-1-3 tab-col-1-2 ">
                 <div class="">
                     <div class="image-apart"
-                         data-image="<?php echo sfConfig::get('app_category_images', 'category_images') . $chain->image_path ?>">
+                         data-image="<?php echo VtHelper::getThumbUrl($path, 420, 315, 'default') ?>">
                         <a href="<?php echo url_for1('@chain_detail?slug=' . $chain->slug) ?>"><img
-                                src="<?php echo VtHelper::getPathImage($chain->image_path, sfConfig::get('app_category_images', 'category_images')) ?>"
+                                src="<?php echo VtHelper::getThumbUrl($path, 420, 315, 'default') ?>"
                                 alt="<?php echo $chain->name ?>"
                                 width="100%"></a>
                     </div>
