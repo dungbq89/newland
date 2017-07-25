@@ -18,13 +18,14 @@
 <?php
 if ($listOtherRoom) {
     foreach ($listOtherRoom as $room) {
+        $path = '/uploads/' . sfConfig::get('app_product_images') . $room['image_path'];
         ?>
         <div class="col-1-4 pad-col-1-3 tab-col-1-2 ">
             <div class="">
                 <div class="image-apart">
 
                     <a href="<?php echo url_for1('@room_detail?slug=' . $room['slug']) ?>"><img
-                            src="<?php echo VtHelper::getPathImage($room['image_path'], sfConfig::get('app_product_images', 'products')) ?>" alt="<?php echo $room['product_name'] ?>"
+                            src="<?php echo VtHelper::getThumbUrl($path, 420, 315, 'default') ?>" alt="<?php echo $room['product_name'] ?>"
                             width="100%"></a>
                 </div>
                 <h2 class="pro-name"><a href="<?php echo url_for1('@room_detail?slug=' . $room['slug']) ?>"><?php echo $room['product_name'] ?></a></h2>

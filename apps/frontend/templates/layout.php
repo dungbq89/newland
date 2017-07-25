@@ -22,6 +22,7 @@
     <meta property="og:image" name="og:image" content="" data-app>
     <link href="favicon.png" rel="shortcut icon"/>
     <meta http-equiv="REFRESH" content="5400"/>
+    <meta name="B-verify" content="5a2027f0e494540dec36ecde8405475e940d4f7a" />
 </head>
 <div id="page">
     <div class="content">
